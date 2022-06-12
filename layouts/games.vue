@@ -13,7 +13,7 @@ onMounted(() => {
 </script>
 
 <template>
-<div class="page">
+<div class="game-layout">
 
   <TheHeader>
 
@@ -49,9 +49,9 @@ onMounted(() => {
 </template>
 
 <style>
-.page {
-  height: 100vh;
-  width: 100vw;
+.game-layout {
+  height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
 
