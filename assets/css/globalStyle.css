@@ -1,0 +1,57 @@
+/* Variables */
+:root {
+  /* Text colors */
+  --text-color: rgb(44, 62, 80);
+  --nw-text-color: #fff;
+
+  /* Background color */
+  --background-color: rgb(255, 255, 255);
+  --content-background-color: rgb(244, 247, 248);
+  --menu-background-color: rgb(238, 242, 245);
+
+  /* Border color */
+  --border-color: #282c34;
+  --border-color-transparent: rgb(0,0,0,0.4);
+
+  /* Components */
+
+  /* Theme Selector */
+  --theme-selector-gradient: linear-gradient(to right, yellow -20%, red);
+
+  /* Onscreen Keyboard Color */
+  --keyboard-key-color: rgb(0,0,0,0);
+  --keyboard-key-border-color: rgb(30, 30, 31);
+  --keyboard-key-border-image-gradiant: linear-gradient(to top, rgba(30,30,31,1) 20%, rgba(0,0,0,0) 80%) 1;
+
+  /* Ordet: Colors */
+  --unused-background-color: rgb(135, 135, 145, 0.7);
+  --misplaced-background-color: rgb(238, 203, 5, 0.7);
+  --correct-background-color: rgb(82, 148, 16, 0.7);
+  --unused-background-gradient: linear-gradient(to top, rgb(135, 135, 145, 0.7) 10%, rgb(0,0,0,0) 80%);
+  --misplaced-background-gradient: linear-gradient(to top, rgb(238, 203, 5, 0.7) 10%, rgb(0,0,0,0) 80%);
+  --correct-background-gradient: linear-gradient(to top, rgb(82, 148, 16, 0.7) 10%, rgb(0,0,0,0) 80%);
+}
+
+.dark {
+  /* Text colors */
+  --text-color: #ffffff;
+
+  /* Background color */
+  --background-color: rgb(30, 30, 31);
+  --content-background-color: rgb(24, 25, 28);
+  --menu-background-color: rgb(20, 20, 23);
+
+  /* Border color */
+  --border-color: #fff;
+  --border-color-transparent: rgb(255,255,255,0.4);
+
+  /* Components */
+
+  /* Theme Selector */
+  --theme-selector-gradient: linear-gradient(to right, blue -20%, indigo);
+
+  /* Onscreen Keyboard Color */
+  --keyboard-key-color: rgb(0,0,0,0);
+  --keyboard-key-border-color: rgb(255, 255, 255);
+  --keyboard-key-border-image-gradiant: linear-gradient(to top, rgba(255,255,255,1) 20%, rgba(0,0,0,0) 80%) 1;
+}
