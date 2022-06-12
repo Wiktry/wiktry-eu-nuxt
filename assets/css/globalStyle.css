@@ -55,3 +55,7 @@
   --keyboard-key-border-color: rgb(255, 255, 255);
   --keyboard-key-border-image-gradiant: linear-gradient(to top, rgba(255,255,255,1) 20%, rgba(0,0,0,0) 80%) 1;
 }
+
+html, body {
+  overflow: hidden;
+}

@@ -17,6 +17,10 @@ onMounted(() => {
 
   <TheHeader>
 
+    <template v-slot:name>
+      Ordet
+    </template>
+
     <template v-slot:icons>
       <button class="button" @click="modal.changeModal(0)">
         <v-icon :icon="mdiChartBoxOutline" :color="theme.iconColor" size="32" />
