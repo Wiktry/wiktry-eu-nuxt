@@ -28,7 +28,7 @@ onMounted(() => {
 <style scoped>
 .page {
   height: 100vh;
+  height: calc(100vh - env(safe-area-inset-bottom));
   height: calc(var(--vh, 1vh) * 100);
-  height: -webkit-fill-available;
 }
 </style>
