@@ -74,7 +74,8 @@ const menu = useStoresMenu();
   align-items: center;
 }
 .slot-name {
-
+  font-size: 1.4rem;
+  font-weight: bold;
 }
 .slot-icons {
   height: 100%;
@@ -127,6 +128,12 @@ const menu = useStoresMenu();
   }
   .lower-header-left {
     min-height: 10px;
+  }
+}
+
+@media (max-width: 300px) {
+  .slot-name {
+    font-size: 0.8rem;
   }
 }
 </style>

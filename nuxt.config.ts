@@ -11,6 +11,7 @@ export default defineNuxtConfig({
       '@fortawesome/fontawesome-free',
       '@fortawesome/fontawesome-svg-core',
       '@fortawesome/vue-fontawesome',
+      'three',
     ],
   },
   modules: ['@pinia/nuxt'],

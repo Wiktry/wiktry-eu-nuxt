@@ -41,11 +41,16 @@ useEventListener('keydown', useKey);
 
 <template>
   <NuxtLayout name="games">
-    <div class='game'>
-      <div class="divider"></div>
-      <GamesOrdetBoard />
-      <KeyboardContainer />
-    </div>
+    <template #name>
+      <text>Ordet</text>
+    </template>
+    <template #game>
+      <div class='game'>
+        <div class="divider"></div>
+        <GamesOrdetBoard />
+        <KeyboardContainer />
+      </div>
+    </template>
   </NuxtLayout>
 </template>
 

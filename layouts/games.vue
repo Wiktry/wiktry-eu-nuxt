@@ -17,8 +17,8 @@ onMounted(() => {
 
   <TheHeader>
 
-    <template v-slot:name>
-      Ordet
+    <template #name>
+      <slot name="name"></slot>
     </template>
 
     <template v-slot:icons>
@@ -40,7 +40,7 @@ onMounted(() => {
   <div class="content">
     <TheMenu />
 
-    <slot>
+    <slot name="game">
       <!-- Here goes the actual game -->
     </slot>
   </div>

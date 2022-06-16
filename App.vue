@@ -27,7 +27,8 @@ onMounted(() => {
 
 <style scoped>
 .page {
-  height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+  min-height: -webkit-fill-available;
 }
 </style>
