@@ -34,12 +34,9 @@ onMounted(() => {
       <ModalGamesOrdetStats v-if="modal.id === 0" />
       <ModalGamesOrdetGuide v-else-if="modal.id === 1" />
     </template>
-
   </TheHeader>
 
   <div class="content">
-    <TheMenu />
-
     <slot name="game">
       <!-- Here goes the actual game -->
     </slot>
@@ -48,24 +45,18 @@ onMounted(() => {
 </div>
 </template>
 
-<style>
+<style scoped>
 .game-layout {
   height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
 }
 .content {
-  height: calc(100vh - 60px);
+  height: calc(100% - 60px);
   width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
 
   display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
+  flex-direction: column;
 }
 .button {
   margin: 0 5px;

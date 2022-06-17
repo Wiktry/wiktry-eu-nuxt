@@ -24,10 +24,10 @@ const rows = computed(() => {
 <style>
 .board {
   margin: 4px 0;
-  height: 100%;
-  width: 100%;
-  max-height: 460px;
-  max-width: 350px;
+  /*width: 100%;
+  height: 100%;*/
+  height: 460px;
+  width: 350px;
 
   display: flex;
   flex-flow: column nowrap;

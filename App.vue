@@ -20,15 +20,13 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="page">
-    <NuxtPage />
-  </div>
+  <NuxtPage />
 </template>
 
-<style scoped>
+<style>
 .page {
-  height: 100vh;
+  /*height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
-  height: calc(100vh - env(safe-area-inset-bottom));
+  height: calc(100vh - env(safe-area-inset-bottom));*/
 }
 </style>

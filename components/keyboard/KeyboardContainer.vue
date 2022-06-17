@@ -22,6 +22,7 @@ const rows = computed(() => {
 <style>
 .keyboard {
   width: 100%;
+  height: 182px;
   max-width: 492px;
   margin: 0 0 2px 0;
 

@@ -37,12 +37,13 @@ const menu = useStoresMenu();
 
     </slot>
   </ModalBase>
+  <TheMenu />
 </div>
 </template>
 
 <style scoped>
 .header {
-  min-height: 60px;
+  height: 60px;
   width: 100%;
 
   display: flex;
@@ -51,7 +52,7 @@ const menu = useStoresMenu();
   align-items: center;
 }
 .upper-header {
-  min-height: 40px;
+  height: 40px;
   width: 100%;
 
   background-color: var(--content-background-color);
@@ -121,13 +122,13 @@ const menu = useStoresMenu();
 
 @media (max-height: 600px) {
   .header {
-    min-height: 30px;
+    height: 30px;
   }
   .upper-header {
-    min-height: 20px;
+    height: 20px;
   }
   .lower-header-left {
-    min-height: 10px;
+    height: 10px;
   }
 }
 

@@ -45,28 +45,23 @@ useEventListener('keydown', useKey);
       <text>Ordet</text>
     </template>
     <template #game>
-      <div class='game'>
-        <div class="divider"></div>
+      <div class="game">
         <GamesOrdetBoard />
-        <KeyboardContainer />
       </div>
+      <KeyboardContainer />
     </template>
   </NuxtLayout>
 </template>
 
 <style scoped>
+.game {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  overflow: hidden;
+}
 .divider {
   min-height: 1px;
-}
-.game {
-  height: 100%;
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
-
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: space-between;
 }
 </style>
