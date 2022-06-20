@@ -1,5 +1,5 @@
 <script setup>
-import { provide, ref } from 'vue';
+import { provide, ref, onMounted } from 'vue';
 import defineWord from '../../scripts/defineWord.js';
 import KeyboardState from '../../classes/KeyboardState';
 import defineGameState from '../../classes/GameState';
@@ -13,6 +13,11 @@ const store = useStoresOrdet();
 store.getStats();
 const keyboardState = new KeyboardState();
 const gameState = defineGameState(keyboardState, store);
+const isMounted = ref(false);
+
+onMounted(() => {
+  isMounted.value = true;
+})
 
 provide('gameState', gameState);
 provide('keyboardState', keyboardState);
@@ -46,7 +51,7 @@ useEventListener('keydown', useKey);
     </template>
     <template #game>
       <div class="game">
-        <GamesOrdetBoard />
+        <GamesOrdetBoard v-if='isMounted' />
       </div>
       <KeyboardContainer />
     </template>
