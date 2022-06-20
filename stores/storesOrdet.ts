@@ -9,7 +9,7 @@ interface IStat {
 
 const createStats = (local: Map<string, number> | null): Array<IStat> => {
   const tmp = [];
-  for (let i = 1; i < 8; i++) {
+  for (let i = 0; i < 8; i++) {
     tmp.push({id: i, value: 0, max: 0});
   }
 
