@@ -25,7 +25,7 @@ const ordet = useStoresOrdet();
       </tr>
       <template v-for="item in ordet.stats">
         <tr class="table-box">
-          <th>{{ item.id + 1 }}</th>
+          <th>{{ item.id }}</th>
           <th class="progress-container">
             <progress class="progress" :max="item.max" :value="item.value" />
           </th>

@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { getLocalStorage } from "@/scripts/localStorage";
+import { getLocalStorage, putLocalStorage } from "@/scripts/localStorage";
 
 interface IStat {
   id: number,
@@ -7,23 +7,42 @@ interface IStat {
   max: number
 }
 
-const createStats = (local: Map<string, number> | null): Array<IStat> => {
-  const tmp = [];
-  for (let i = 0; i < 8; i++) {
-    tmp.push({id: i, value: 0, max: 0});
-  }
-
-  if (local) {
-    local.forEach(el => {
-      tmp[el-1].value++;
-    })
-
-    for (let i = 0; i < 7; i++) {
-      tmp[i].max = local.size;
+const healStats = (stats: Map<string, number>) => {
+  const tmp = new Map();
+  
+  stats.forEach((value, key) => {
+    if (value === 0) {
+      tmp.set(key, 1);
+    } else {
+      tmp.set(key, value);
     }
-  }
+  });
 
-  return tmp;
+  putLocalStorage('statistics', tmp);
+}
+
+const createStats = (local: Map<string, number> | null): Array<IStat> => {
+  try {
+    const tmp = [];
+    for (let i = 1; i < 8; i++) {
+      tmp.push({id: i, value: 0, max: 0});
+    }
+
+    if (local) {
+      local.forEach(el => {
+        tmp[el-1].value++;
+      })
+
+      for (let i = 0; i < 7; i++) {
+        tmp[i].max = local.size;
+      }
+    }
+
+    return tmp;  
+  } catch (e) {
+    healStats(local);
+    console.error('storesOrdet -> createStats: ' + e);
+  }
 }
 
 const _getStats = () => {

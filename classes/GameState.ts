@@ -195,7 +195,7 @@ class GameState {
     }
 
     console.log(results);
-    results.set(this.date, this.index - 1);
+    results.set(this.date, this.index);
     putLocalStorage('statistics', results);
   }
 }
