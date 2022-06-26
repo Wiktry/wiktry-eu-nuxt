@@ -1,10 +1,8 @@
 <script setup>
 import { mdiHelpCircleOutline, mdiChartBoxOutline  } from '@mdi/js';
-import { useStoresModal } from '@/stores/storesModal.ts'; 
 import { useStoresTheme } from '@/stores/storesTheme.ts';
 
 const theme = useStoresTheme();
-const modal = useStoresModal();
 const isMounted = ref(false);
 
 onMounted(() => {
@@ -22,17 +20,11 @@ onMounted(() => {
     </template>
 
     <template v-slot:icons>
-      <button class="button" @click="modal.changeModal(0)">
-        <v-icon :icon="mdiChartBoxOutline" :color="theme.iconColor" size="32" />
-      </button>
-      <button class="button" @click="modal.changeModal(1)">
-        <v-icon :icon="mdiHelpCircleOutline" :color="theme.iconColor" size="32" />
-      </button>
+      <slot name="icons"></slot>
     </template>
 
     <template v-slot:modal>
-      <ModalGamesOrdetStats v-if="modal.id === 0" />
-      <ModalGamesOrdetGuide v-else-if="modal.id === 1" />
+      <slot name="modal"></slot>
     </template>
   </TheHeader>
 
@@ -60,5 +52,11 @@ onMounted(() => {
 }
 .button {
   margin: 0 5px;
+}
+
+@media (max-height: 600px) {
+  .content {
+    height: calc(100% - 40px);
+  }
 }
 </style>

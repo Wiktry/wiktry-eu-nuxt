@@ -32,7 +32,7 @@ const classObject = computed(() => ({
   justify-content: center;
   align-items: center;
 
-  font-weight: 600;
+  font-weight: bold;
   font-size: 2em;
   line-height: 0;
   text-transform: capitalize;
@@ -41,29 +41,44 @@ const classObject = computed(() => ({
   border: 2px solid var(--border-color);
   box-sizing: border-box;
 
-  transition: border .3s ease;
+  transition: .3s ease;
 }
 .unused {
   background-color: var(--unused-background-color);
+  border: 2px solid var(--unused-background-color);
 }
 .misplaced {
   background-color: var(--misplaced-background-color);
+  border: 2px solid var(--misplaced-background-color);
 }
 .correct {
   background-color: var(--correct-background-color);
+  border: 2px solid var(--correct-background-color);
 }
 .added {
-  /*border: 2px solid var(--tile-border-color-transition);*/
-  /*animation: letter-added .3s ease;*/
-  border: 2px solid var(--border-color-transparent);
+  animation: letter-added .15s ease;
 }
 
 @keyframes letter-added {
   0%, 100% {
     border: 2px solid var(--border-color);
+    transform: scale(1);
   }
   50% {
     border: 2px solid var(--border-color-transparent);
+    transform: scale(1.1);
+  }
+}
+
+@keyframes letter-unused {
+  0% {
+
+  }
+  50% {
+
+  }
+  100% {
+    
   }
 }
 

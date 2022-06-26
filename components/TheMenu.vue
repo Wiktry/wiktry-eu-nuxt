@@ -13,14 +13,16 @@ const menu = useStoresMenu();
 .menu {
   height: 100%;
   width: 0;
-  background-color: red;
+  background-color: var(--content-background-color);
   position: fixed;
   top: 40px;
   z-index: 100;
   transition: .3s ease;
+  align-self: start;
 }
+
 .show {
-  width: 300px;
+  width: 400px;
 }
 
 @media (max-width: 500px) {

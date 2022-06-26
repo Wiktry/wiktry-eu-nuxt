@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { getLocalStorage, putLocalStorage } from "@/scripts/localStorage";
+import { getLocalStorage, putLocalStorage } from "../scripts/localStorage";
 
 interface IStat {
   id: number,
@@ -55,11 +55,16 @@ export const useStoresOrdet = defineStore('stores-ordet', {
     return {
       isRunning: true,
       stats: [],
+      rowResult: [0,0],
     }
   },
   actions: {
     getStats() {
       this.stats = _getStats();
+    },
+    setRowResult(row: number, res: number) {
+      this.rowResult[0] = row;
+      this.rowResult[1] = res;
     }
   },
 })

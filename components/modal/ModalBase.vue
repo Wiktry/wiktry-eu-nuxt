@@ -9,6 +9,8 @@ const modal = useStoresModal();
     <slot>
 
     </slot>
+
+    <div class="button">Close</div>
   </div>
 </div>
 </template>
@@ -34,6 +36,9 @@ const modal = useStoresModal();
   position: fixed;
   overflow: hidden;
 
+  flex-flow: column nowrap;
+  align-items: center;
+
   transition: height .3s ease;
 }
 .show-back {
@@ -41,6 +46,23 @@ const modal = useStoresModal();
 }
 .show {
   height: calc(100vh - 40px);
+}
+.button {
+  height: 40px;
+  width: 120px;
+  margin: 20px auto;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+
+  border: 2px solid var(--text-color);
+  border-radius: 10px;
+}
+.button:hover {
+  background-color: rgba(0,0,0,0.2);
 }
 
 /* If the screen is less than 600px tall */
@@ -67,7 +89,7 @@ const modal = useStoresModal();
     display: flex;
   }
   .show {
-    display: block;
+    display: flex;
   }
 }
 </style>

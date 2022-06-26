@@ -30,4 +30,10 @@ const rows = computed(() => {
   flex-flow: column nowrap;
   gap: 4px;
 }
+
+@media (max-height: 600px) {
+  .keyboard {
+    height: 152px;
+  }
+}
 </style>

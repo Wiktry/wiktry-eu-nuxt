@@ -142,8 +142,10 @@ class GameState {
         }
 
         this.saveState();
+        store.setRowResult(this.index - 1, 1);
         return 1;
       }
+      store.setRowResult(this.index, 2);
       return 2;
     }
     return 0;
