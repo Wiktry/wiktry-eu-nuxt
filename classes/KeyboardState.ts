@@ -41,6 +41,15 @@ class KeyboardState {
       }
     });
   }
+
+  exists(key) {
+    for (let i = 0; i < this.state.length; i++) {
+      if (this.state[i].value === key) {
+        return true;
+      }
+    }
+    return false;
+  }
 }
 
 export default KeyboardState;

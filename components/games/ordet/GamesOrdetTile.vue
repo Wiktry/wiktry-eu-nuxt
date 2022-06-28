@@ -1,7 +1,9 @@
 <script setup>
 import { computed } from '@vue/reactivity';
 
-const props = defineProps(['letter']);
+const props = defineProps({
+  letter: Object,
+});
 
 const classObject = computed(() => ({
   unused: props.letter.res === 3,
@@ -13,8 +15,8 @@ const classObject = computed(() => ({
 
 <template>
 
-  <div class="tile" :class="classObject" :key="props.letter.value">
-    {{ props.letter.value }}
+  <div class="tile" :class="classObject" :key="letter.value">
+    {{ letter.value }}
   </div>
 
 </template>
@@ -67,18 +69,6 @@ const classObject = computed(() => ({
   50% {
     border: 2px solid var(--border-color-transparent);
     transform: scale(1.1);
-  }
-}
-
-@keyframes letter-unused {
-  0% {
-
-  }
-  50% {
-
-  }
-  100% {
-    
   }
 }
 

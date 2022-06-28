@@ -1,9 +1,9 @@
 <script setup>
 import { provide, ref, onMounted } from 'vue';
-import defineWord from '../../scripts/defineWord.js';
-import KeyboardState from '../../classes/KeyboardState';
-import defineGameState from '../../classes/GameState';
-import useEventListener from '../../composables/event.js';
+import defineWord from '@/scripts/defineWord.js';
+import KeyboardState from '@/classes/KeyboardState';
+import defineGameState from '@/classes/GameState';
+import useEventListener from '@/composables/event.js';
 import { useStoresOrdet } from '@/stores/storesOrdet.ts';
 import { useStoresModal } from '@/stores/storesModal.ts';
 import { useStoresTheme } from '@/stores/storesTheme.ts';
@@ -30,7 +30,7 @@ provide('keyboardState', keyboardState);
 const useKey = (event) => {
   if (gameState.isRunning) {
     const key = event.key.toLowerCase();
-    if (key && key.length === 1) {
+    if (key && keyboardState.exists(key)) {
       event.preventDefault();
       gameState.addLetter(key);
     } else if (key && key === 'enter') {
@@ -41,7 +41,7 @@ const useKey = (event) => {
       }
     } else if (key && key === 'backspace') {
       event.preventDefault();
-      gameState.removeLetter();
+      gameState.removeLetter(store);
     }
   }
 }
@@ -71,6 +71,7 @@ useEventListener('keydown', useKey);
     </template>
 
     <template #game>
+      <v-alert class="alert" :class="{ 'alert-visible': store.notAWord }" dense elevation="3" type="info">Det ordet finns inte</v-alert>
       <div class="game">
         <GamesOrdetBoard v-if='isMounted' />
       </div>
@@ -87,6 +88,16 @@ useEventListener('keydown', useKey);
   justify-content: center;
   flex: 1;
   overflow: hidden;
+}
+.alert {
+  position: fixed;
+  align-self: center;
+  margin: 20px 0 0 0;
+  opacity: 0;
+  transition: .4s ease;
+}
+.alert-visible {
+  opacity: 1;
 }
 .divider {
   min-height: 1px;

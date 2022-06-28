@@ -80,8 +80,12 @@ class GameState {
   }
 
   // Remove the last added letter i.e. backspace
-  removeLetter() {
+  removeLetter(store: any) {
     if (this.currentLength > 0) {
+      if (store.setRowResult(this.index, 0)) {
+        store.rowResult = 0;
+      }
+
       this.state[(this.currentLength - 1) + (this.index * 5)].value = '';
       this.currentWord = this.currentWord.slice(0, -1);
       this.currentLength--;

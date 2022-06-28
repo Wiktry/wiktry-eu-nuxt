@@ -1,4 +1,4 @@
-import { defineStore } from "pinia";
+import { defineStore, storeToRefs } from "pinia";
 import { getLocalStorage, putLocalStorage } from "../scripts/localStorage";
 
 interface IStat {
@@ -56,6 +56,7 @@ export const useStoresOrdet = defineStore('stores-ordet', {
       isRunning: true,
       stats: [],
       rowResult: [0,0],
+      notAWord: false,
     }
   },
   actions: {
@@ -65,6 +66,12 @@ export const useStoresOrdet = defineStore('stores-ordet', {
     setRowResult(row: number, res: number) {
       this.rowResult[0] = row;
       this.rowResult[1] = res;
+
+      if (res === 2) {
+        console.log(res);
+        this.notAWord = true;
+        setTimeout(() => {this.notAWord = false}, 2000);
+      }
     }
   },
 })
