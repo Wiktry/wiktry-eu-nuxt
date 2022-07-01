@@ -1,8 +1,5 @@
 <script setup>
 import { mdiHelpCircleOutline, mdiChartBoxOutline  } from '@mdi/js';
-import { useStoresTheme } from '@/stores/storesTheme.ts';
-
-const theme = useStoresTheme();
 const isMounted = ref(false);
 
 onMounted(() => {

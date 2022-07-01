@@ -1,11 +1,11 @@
 <script setup>
 import { provide, ref, onMounted } from 'vue';
-import { useStoresTheme } from '@/stores/storesTheme.ts';
+import { useStoresSettings } from '@/stores/storesSettings.ts';
 
-const theme = useStoresTheme();
+const settings = useStoresSettings();
 
 onMounted(() => {
-  theme.fromLocalStorage();
+  settings.fromLocalStorage();
 
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);

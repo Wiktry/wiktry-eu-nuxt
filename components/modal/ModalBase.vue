@@ -4,13 +4,13 @@ const modal = useStoresModal();
 </script>
 
 <template>
-<div class="modal-back" :class="{'show-back': modal.show}" @click="modal.closeModal()">
+<div class="modal-back" :class="{'show-back': modal.show}">
   <div class="modal" :class="{ show: modal.show }">
     <slot>
 
     </slot>
 
-    <div class="button">Close</div>
+    <div class="button" @click="modal.closeModal()">Stäng</div>
   </div>
 </div>
 </template>

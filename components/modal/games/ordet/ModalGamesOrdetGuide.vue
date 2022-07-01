@@ -1,6 +1,5 @@
 <script setup>
-import { useStoresModal } from '@/stores/storesModal.ts'; 
-const modal = useStoresModal();
+
 </script>
 
 <template>

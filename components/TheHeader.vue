@@ -1,10 +1,10 @@
 <script setup>
 import { inject, ref } from 'vue';
 import { mdiHelpCircleOutline, mdiMenu } from '@mdi/js';
-import { useStoresTheme } from '@/stores/storesTheme.ts';
+import { useStoresSettings } from '@/stores/storesSettings.ts';
 import { useStoresMenu } from '@/stores/storesMenu.ts';
 
-const theme = useStoresTheme();
+const settings = useStoresSettings();
 const menu = useStoresMenu();
 </script>
 
@@ -13,7 +13,7 @@ const menu = useStoresMenu();
   <div class="upper-header">
     <div class="util-area">
       <button class="button" @click="menu.changeMenu">
-        <v-icon :icon="mdiMenu" :color="theme.iconColor" size="38" />
+        <v-icon :icon="mdiMenu" :color="settings.theme.iconColor" size="38" />
       </button>
       <HeaderThemeSelector />
     </div>

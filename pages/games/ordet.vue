@@ -6,8 +6,8 @@ import defineGameState from '@/classes/GameState';
 import useEventListener from '@/composables/event.js';
 import { useStoresOrdet } from '@/stores/storesOrdet.ts';
 import { useStoresModal } from '@/stores/storesModal.ts';
-import { useStoresTheme } from '@/stores/storesTheme.ts';
-import { mdiChartBoxOutline, mdiHelpCircleOutline } from '@mdi/js';
+import { useStoresSettings } from '@/stores/storesSettings.ts';
+import { mdiChartBoxOutline, mdiHelpCircleOutline, mdiCogOutline } from '@mdi/js';
 
 
 // Get today's word to send to the board
@@ -15,7 +15,7 @@ const correctWord = defineWord();
 const store = useStoresOrdet();
 store.getStats();
 const modal = useStoresModal();
-const theme = useStoresTheme();
+const settings = useStoresSettings();
 const keyboardState = new KeyboardState();
 const gameState = defineGameState(keyboardState, store);
 const isMounted = ref(false);
@@ -58,16 +58,20 @@ useEventListener('keydown', useKey);
 
     <template #icons>
       <button class="button" @click="modal.changeModal(0)">
-        <v-icon :icon="mdiChartBoxOutline" :color="theme.iconColor" size="32" />
+        <v-icon :icon="mdiChartBoxOutline" :color="settings.theme.iconColor" size="32" />
       </button>
       <button class="button" @click="modal.changeModal(1)">
-        <v-icon :icon="mdiHelpCircleOutline" :color="theme.iconColor" size="32" />
+        <v-icon :icon="mdiHelpCircleOutline" :color="settings.theme.iconColor" size="32" />
+      </button>
+      <button class="button" @click="modal.changeModal(2)">
+        <v-icon :icon="mdiCogOutline" :color="settings.theme.iconColor" size="32" />
       </button>
     </template>
 
     <template #modal>
       <ModalGamesOrdetStats v-if="modal.id === 0" />
       <ModalGamesOrdetGuide v-else-if="modal.id === 1" />
+      <ModalGamesOrdetSettings v-else-if="modal.id === 2" />
     </template>
 
     <template #game>

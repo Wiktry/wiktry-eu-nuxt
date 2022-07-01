@@ -1,21 +1,15 @@
 <script setup>
-import { computed, inject, ref } from 'vue';
+import { computed, ref } from 'vue';
 import { mdiBackspaceOutline, mdiArrowRightCircleOutline  } from '@mdi/js'; 
-import { useStoresTheme } from '@/stores/storesTheme.ts';
+import { useStoresSettings } from '@/stores/storesSettings.ts';
 
+const settings = useStoresSettings();
 const props = defineProps(['letter']);
 
 const isEnter = props.letter.value === "!";
 const isBack = props.letter.value === "?";
 const isSpecial = ref((isEnter || isBack));
 const innerHeight = ref(window.innerHeight);
-
-const setThemeIcons = computed(() => {
-  if (useStoresTheme.dark.value) {
-    return '#ffffff';
-  }
-  return '#000000';
-});
 
 const setScaleIcons = computed(() => {
   if (innerHeight.value > 600) {
@@ -48,13 +42,13 @@ const classObject = computed(() => ({
 
 <template>
 <button v-if="!isSpecial" class="letter" :class="classObject" @click="decideEvent">
-  {{ letter.value }}
+  {{ classObject.unused && settings.ordet.hideUsedLetters ? '' : letter.value }}
 </button>
 <button v-else-if="isEnter" class="letter special" :class="classObject" @click="decideEvent">
-  <v-icon :icon="mdiArrowRightCircleOutline" :color="useStoresTheme.iconColor" size="32" />
+  <v-icon :icon="mdiArrowRightCircleOutline" :color="settings.theme.iconColor" size="32" />
 </button>
 <button v-else-if="isBack" class="letter special" :class="classObject" @click="decideEvent">
-  <v-icon :icon="mdiBackspaceOutline" :color="useStoresTheme.iconColor" size="32" />
+  <v-icon :icon="mdiBackspaceOutline" :color="settings.theme.iconColor" size="32" />
 </button>
 </template>
 

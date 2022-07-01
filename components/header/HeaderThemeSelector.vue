@@ -1,10 +1,10 @@
 <script setup>
 import { computed } from '@vue/reactivity';
-import { useStoresTheme } from '@/stores/storesTheme.ts'; 
-const theme = useStoresTheme();
+import { useStoresSettings } from '@/stores/storesSettings.ts'; 
+const settings = useStoresSettings();
 
 const classObject = computed(() => ({
-  'dark': theme.dark,
+  'dark': settings.theme.dark,
 }))
 
 </script>
@@ -12,12 +12,12 @@ const classObject = computed(() => ({
 <template>
   <button
     class="theme-button"
-    :class="{ 'theme-button-dark': theme.dark }"
-    @click="theme.changeTheme"
+    :class="{ 'theme-button-dark': settings.theme.dark }"
+    @click="settings.changeTheme"
   >
     <span 
       class="circle" 
-      :class="{ 'circle-dark': theme.dark }"
+      :class="{ 'circle-dark': settings.theme.dark }"
     ></span>
   </button>
 </template>

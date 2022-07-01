@@ -49,9 +49,6 @@ const ordet = useStoresOrdet();
 .box {
   margin: 10px 0;
 }
-.table {
-  
-}
 .table-box {
   display: grid;
   grid-template-columns: 1fr 2.5fr 1fr;
