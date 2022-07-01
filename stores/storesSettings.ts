@@ -9,7 +9,7 @@ export const useStoresSettings = defineStore('stores-settings', {
         iconColor: 'rgb(44, 62, 80)'
       },
       ordet: {
-        hideUsedLetters: true,
+        hideUsedLetters: false,
       }
     }
   },
