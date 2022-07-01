@@ -28,6 +28,8 @@ export const useStoresSettings = defineStore('stores-settings', {
     },
     ordetshowUsedLetters() {
       this.showUsedLetters = !this.showUsedLetters;
+
+      this.toLocalStorage();
     },
 
 
