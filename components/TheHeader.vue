@@ -6,23 +6,28 @@ import { useStoresMenu } from '@/stores/storesMenu.ts';
 
 const settings = useStoresSettings();
 const menu = useStoresMenu();
+
+defineProps({
+  onlyMenu: {
+    type: Boolean,
+    required: false
+  }
+});
 </script>
 
 <template>
 <div class="header">
-  <div class="upper-header">
+  <div class="upper-header" :class="{ 'only-menu': onlyMenu }">
     <div class="util-area">
-      <button class="button" @click="menu.changeMenu">
-        <v-icon :icon="mdiMenu" :color="settings.theme.iconColor" size="38" />
-      </button>
+      <header-menu-button />
       <HeaderThemeSelector />
     </div>
-    <div class="slot-name">
+    <div class="slot-name" v-if="!onlyMenu">
       <slot name="name">
-
+        
       </slot>
     </div>
-    <div class="slot-icons">
+    <div class="slot-icons" v-if="!onlyMenu">
       <slot name="icons">
 
       </slot>
@@ -64,6 +69,9 @@ const menu = useStoresMenu();
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+}
+.only-menu {
+  background-color: transparent;
 }
 .util-area {
   height: 100%;

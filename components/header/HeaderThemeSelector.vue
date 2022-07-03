@@ -34,7 +34,7 @@ const classObject = computed(() => ({
   
   border-radius: 20px;
 
-  box-shadow: inset 0 0 4px 0 rgba(0,0,0,.1);
+  box-shadow: inset 0 0 4px 1px rgba(0,0,0,.4);
 
   display: flex;
   flex-flow: row nowrap;
@@ -50,7 +50,7 @@ const classObject = computed(() => ({
   background-color: var(--menu-background-color);
   border-radius: 20px;
 
-  box-shadow: 0 0 4px 0 rgba(0,0,0,.1);
+  box-shadow: 0 0 4px 0 rgba(0,0,0,.4);
 
   transition: transform .3s ease;
 }
@@ -65,31 +65,31 @@ const classObject = computed(() => ({
     padding: 3px;
     margin-left: 5px;
     border-radius: 10px;
-    box-shadow: inset 0 0 2px 0 rgba(0,0,0,.1);
+    box-shadow: inset 0 0 2px 0 rgba(0,0,0,.6);
   }
   .circle {
     height: 11px;
     width: 11px;
-    box-shadow: 0 0 2px 0 rgba(0,0,0,.1);
+    box-shadow: 0 0 2px 0 rgba(0,0,0,.6);
   }
   .circle-dark {
     transform: translate(13px);
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 4500px) {
   .theme-button {
     min-height: 20px;
     min-width: 40px;
     padding: 4px;
     margin-left: 8px;
     border-radius: 15px;
-    box-shadow: inset 0 0 3px 0 rgba(0,0,0,.1);
+    box-shadow: inset 0 0 2px 0 rgba(0,0,0,.6);
   }
   .circle {
     height: 16px;
     width: 16px;
-    box-shadow: 0 0 3px 0 rgba(0,0,0,.1);
+    box-shadow: 0 0 2px 0 rgba(0,0,0,.6);
   }
   .circle-dark {
     transform: translate(17px);
