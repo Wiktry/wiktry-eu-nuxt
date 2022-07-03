@@ -25,7 +25,7 @@ export default defineNuxtConfig({
     link: [
       {
         rel: 'stylesheet',
-        href: "http://fonts.cdnfonts.com/css/Gotham"
+        href: "http://fonts.cdnfonts.com/css/gotham"
       },
       {
         rel: 'stylesheet',
