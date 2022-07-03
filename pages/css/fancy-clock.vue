@@ -78,7 +78,7 @@ onMounted(() => {
   align-items: center;
 
   font-size: 3rem;
-  font-family: 'Gotham';
+  font-family: 'Gotham', 'Open Sans';
 
   overflow: hidden;
 }

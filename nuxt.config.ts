@@ -26,6 +26,10 @@ export default defineNuxtConfig({
       {
         rel: 'stylesheet',
         href: "http://fonts.cdnfonts.com/css/gotham"
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900'
       }
     ]
   }
