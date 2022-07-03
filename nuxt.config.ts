@@ -21,4 +21,12 @@ export default defineNuxtConfig({
     }
   },
   ssr: false,
-})
+  head: {
+    link: [
+      {
+        rel: 'stylesheet',
+        href: "http://fonts.cdnfonts.com/css/gotham"
+      }
+    ]
+  }
+})              

@@ -68,8 +68,6 @@ onMounted(() => {
 </template>
 
 <style>
-@import url('http://fonts.cdnfonts.com/css/gotham');
-
 .main {
   height: 100%;
   width: 100%;
@@ -77,7 +75,7 @@ onMounted(() => {
 
   display: flex;
   justify-content: center;
-  align-content: center;
+  align-items: center;
 
   font-size: 3rem;
   font-family: 'Gotham';
@@ -112,5 +110,11 @@ onMounted(() => {
 }
 .space {
   width: calc(100% / 18);
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 100vw;
+  }
 }
 </style>
