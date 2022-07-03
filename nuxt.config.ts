@@ -21,7 +21,7 @@ export default defineNuxtConfig({
     }
   },
   ssr: false,
-  head: {
+  meta: {
     link: [
       {
         rel: 'stylesheet',
@@ -29,7 +29,7 @@ export default defineNuxtConfig({
       },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900'
+        href: 'https://fonts.googleapis.com/css?family=Open+Sans&display=swap'
       }
     ]
   }
