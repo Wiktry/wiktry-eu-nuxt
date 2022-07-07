@@ -14,7 +14,16 @@ export default defineNuxtConfig({
       'three',
     ],
   },
-  modules: ['@pinia/nuxt'],
+  modules: [
+    '@pinia/nuxt',
+    '@nuxtjs/strapi'
+  ],
+  strapi: {
+    url: process.env.STRAPI_URL || 'https://wiktry-eu-nuxt.herokuapp.com' || 'http://localhost:1337',  
+    prefix: '/api',  
+    version: 'v4',  
+    cookie: {},
+  },
   vite: {
     define: {
       'process.env.DEBUG': false,
