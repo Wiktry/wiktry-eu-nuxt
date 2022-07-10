@@ -29,6 +29,9 @@ pre {
   border: 1px solid var(--border-color);
   border-radius: 6px;
 
-  font-family: 'space-mono', monospace;
+  font-family: 'Fira Code', monospace;
+}
+code {
+  font-family: 'Fira Code', monospace;
 }
 </style>

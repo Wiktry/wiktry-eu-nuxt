@@ -1,0 +1,91 @@
+/*@font-face {
+  font-family: 'Gotham';
+  src: url('~assets/fonts/Gotham/GothamXLight.otf') format('opentype');
+  font-style: normal;
+  font-weight: 200;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('~assets/fonts/Gotham/GothamXLightItalic.otf') format('opentype');
+  font-style: italic;
+  font-weight: 200;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('~assets/fonts/Gotham/GothamLight.otf') format('opentype');
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('~assets/fonts/Gotham/GothamLightItalic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('~assets/fonts/Gotham/GothamBook.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('~assets/fonts/Gotham/GothamBookItalic.otf') format('opentype');
+  font-style: italic;
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('~assets/fonts/Gotham/GothamMedium.woff') format('woff');
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('~assets/fonts/Gotham/GothamMediumItalic.ttf') format('opentype');
+  font-style: italic;
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('~assets/fonts/Gotham/GothamBold.otf') format('opentype');
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('~assets/fonts/Gotham/GothamBlack.otf') format('opentype');
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  src: url('~assets/fonts/Fira-Coda/FiraCoda-Light.woff') format('woff');
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Fira Code';
+  src: url('~assets/fonts/Fira-Coda/FiraCoda-Regular.woff') format('woff');
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Fira Code';
+  src: url('~assets/fonts/Fira-Coda/FiraCoda-Medium.woff') format('woff');
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Fira Code';
+  src: url('~assets/fonts/Fira-Coda/FiraCoda-SemiBold.woff') format('woff');
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Fira Code';
+  src: url('~assets/fonts/Fira-Coda/FiraCoda-Bold.woff') format('woff');
+  font-style: normal;
+  font-weight: 700;
+}*/

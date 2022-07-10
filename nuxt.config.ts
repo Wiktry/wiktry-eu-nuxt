@@ -2,7 +2,12 @@ import { defineNuxtConfig } from 'nuxt'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  css: ['vuetify/lib/styles/main.sass', 'mdi/css/materialdesignicons.min.css', '@/assets/css/globalStyle.css'],
+  css: [
+    'vuetify/lib/styles/main.sass', 
+    'mdi/css/materialdesignicons.min.css', 
+    '@/assets/css/globalStyle.css', 
+    '@/assets/css/globalFonts.css'
+  ],
   build: {
     transpile: [
       'vuetify',
@@ -34,16 +39,8 @@ export default defineNuxtConfig({
     link: [
       {
         rel: 'stylesheet',
-        href: "https://fonts.cdnfonts.com/css/gotham"
-      },
-      {
-        rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css?family=Open+Sans&display=swap'
       },
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.cdnfonts.com/css/space-mono'
-      }
     ]
   }
 })              

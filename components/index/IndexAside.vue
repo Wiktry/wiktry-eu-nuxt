@@ -78,7 +78,6 @@ const changeUrl = (url) => {
         </div>
       </div>
     </div>
-    <div class="aside-footer-pusher" />
     <div class="aside-footer">
       <button @click="changeUrl('https://www.linkedin.com/in/wiktor-rydlund/')" class="footer-button">
         <v-icon :icon="mdiLinkedin" size="32" />
@@ -102,16 +101,15 @@ const changeUrl = (url) => {
 <style scoped>
 .personal-info {
   width: 300px;
-  height: 100%;
-  position: absolute;
-  left: 0;
+  height: 100vh;
+  max-height: 100vh;
 
+  background-color: var(--main-dark);
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.6);
 
   display: flex;
   flex-flow: column nowrap;
-  align-items: center;
-  background-color: var(--main-dark);
+  justify-content: space-between;
 }
 .name-title {
   height: 200px;
@@ -131,7 +129,8 @@ const changeUrl = (url) => {
 
 .experience-cont {
   width: 100%;
-  overflow: scroll;
+  height: 100%;
+  overflow-y: scroll;
   display: flex;
   justify-content: center;
 }
@@ -157,16 +156,9 @@ const changeUrl = (url) => {
   gap: 10px;
 }
 
-.aside-footer-pusher {
-  min-height: 60px;
-  width: 100%;
-}
 .aside-footer {
   width: 300px;
   height: 60px;
-
-  position: fixed;
-  bottom: 0;
 
   background-color: var(--main-middle-dark);
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.6);
@@ -217,9 +209,10 @@ const changeUrl = (url) => {
 @media (max-width: 600px) {
   .personal-info {
     width: 100vw;
+    min-height: 100vh;
   }
   .aside-footer {
-    width: 100%;
+    width: 100vw;
   }
 }
 </style>

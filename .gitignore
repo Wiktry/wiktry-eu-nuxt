@@ -125,3 +125,13 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+api/ne_110m_admin_0_countries.geojson
+api/ne_110m_admin_0_sovereignty.geojson
+assets/1920px-Blue_Marble_2002.png
+components/games/scrabble/GamesScrabbleBoard.vue
+components/games/scrabble/GamesScrabbleKey.vue
+components/games/scrabble/GamesScrabbleTile.vue
+composables/markdown.ts
+pages/games/scrabble.vue
+pages/three.vue
+stores/storesScrabble.ts

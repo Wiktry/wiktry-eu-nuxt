@@ -62,11 +62,12 @@ const changeLanguage = () => {
 
   display: flex;
   flex-flow: row nowrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 20px;
 
-  font-family: 'Gotham';
+  font-family: 'Open Sans';
+  font-weight: 400;
   color: var(--main-text);
 }
 
@@ -106,4 +107,13 @@ const changeLanguage = () => {
   box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.25);
   border: 1px solid rgba(0, 0, 0, 0.3)
 }*/
+
+@media (max-width: 600px) {
+  .main {
+    flex-flow: column nowrap;
+  }
+  .content {
+    margin-left: 0;
+  }
+}
 </style>
