@@ -1,8 +1,4 @@
 <script setup>
-import { mdiHome } from '@mdi/js'; 
-import { useStoresSettings } from '@/stores/storesSettings.ts'; 
-const settings = useStoresSettings();
-
 defineProps({
   active: {
     type: Boolean,
@@ -14,9 +10,7 @@ defineProps({
 <template>
   <div class="container" :class="{ active: !active }">
     <header-menu-button />
-    <NuxtLink class="home" :to="'/'">
-      <v-icon class="icon" :icon="mdiHome" :color="settings.theme.iconColor" size="28" />
-    </NuxtLink>
+    <header-home-button />
     <header-theme-selector />
     <util-aside-menu />
   </div>

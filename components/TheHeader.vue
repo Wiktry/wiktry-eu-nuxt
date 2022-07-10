@@ -20,6 +20,7 @@ defineProps({
   <div class="upper-header" :class="{ 'only-menu': onlyMenu }">
     <div class="util-area">
       <header-menu-button />
+      <header-home-button />
       <header-theme-selector />
     </div>
     <div class="slot-name" v-if="!onlyMenu">
