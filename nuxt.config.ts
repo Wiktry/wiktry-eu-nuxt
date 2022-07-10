@@ -34,7 +34,7 @@ export default defineNuxtConfig({
     link: [
       {
         rel: 'stylesheet',
-        href: "http://fonts.cdnfonts.com/css/gotham"
+        href: "https://fonts.cdnfonts.com/css/gotham"
       },
       {
         rel: 'stylesheet',
@@ -42,7 +42,7 @@ export default defineNuxtConfig({
       },
       {
         rel: 'stylesheet',
-        href: 'http://fonts.cdnfonts.com/css/space-mono'
+        href: 'https://fonts.cdnfonts.com/css/space-mono'
       }
     ]
   }
