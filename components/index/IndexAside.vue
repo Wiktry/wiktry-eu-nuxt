@@ -43,7 +43,7 @@ const changeUrl = (url) => {
 <template>
   <aside class="personal-info">
     <div class="name-title">
-      <v-img src="~/assets/index/portrait.png" max-height="100" />
+      <img src="~/assets/index/portrait.png" height="100" width="100" class="img" />
       <span class="bold text-name">Wiktor Rydlund</span>
       <div>
         <p class="sub-title">Software Developer <br /> Sleep Enthusiast</p>
@@ -91,8 +91,8 @@ const changeUrl = (url) => {
       </div>
       <button class="footer-button" @click="$emit('changeLanguage')">
         <div class="language-select">
-          <v-img src="~/assets/index/se.svg" height="27" width="36" v-if="props.language === 'swedish'"/>
-          <v-img src="~/assets/index/us.svg" height="27" width="36" v-else-if="props.language === 'english'"/>
+          <img src="~/assets/index/se.svg" height="27" width="36" v-if="props.language === 'swedish'"/>
+          <img src="~/assets/index/us.svg" height="27" width="36" v-else-if="props.language === 'english'"/>
         </div>
       </button>
     </div>
@@ -123,7 +123,7 @@ const changeUrl = (url) => {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  align-content: center;
+  align-items: center;
   gap: 5px;
 
   text-align: center;
@@ -195,6 +195,7 @@ const changeUrl = (url) => {
   animation-iteration-count: infinite;
 }
 .language-select {
+  height: 27px;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.6);
 }
 
