@@ -19,9 +19,6 @@ const { isSwiping, direction } = usePointerSwipe(el);
 </template>
 
 <style scoped>
-.frame {
-
-}
 .css {
   height: 100vh;
   width: 100vw;
