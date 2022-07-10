@@ -46,8 +46,6 @@ const changeLanguage = () => {
 </template>
 
 <style>
-@import url('http://fonts.cdnfonts.com/css/gotham');
-
 .main {
   --main-dark: rgb(26, 55, 77);
   --main-middle-dark: rgb(43, 76, 99);
