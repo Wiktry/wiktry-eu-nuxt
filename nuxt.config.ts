@@ -39,6 +39,10 @@ export default defineNuxtConfig({
       {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css?family=Open+Sans&display=swap'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'http://fonts.cdnfonts.com/css/space-mono'
       }
     ]
   }

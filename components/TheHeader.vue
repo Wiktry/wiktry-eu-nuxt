@@ -20,7 +20,7 @@ defineProps({
   <div class="upper-header" :class="{ 'only-menu': onlyMenu }">
     <div class="util-area">
       <header-menu-button />
-      <HeaderThemeSelector />
+      <header-theme-selector />
     </div>
     <div class="slot-name" v-if="!onlyMenu">
       <slot name="name">
@@ -37,13 +37,13 @@ defineProps({
     <div class="lower-header-left"></div>
   </div>
 
-  <ModalBase>
+  <modal-base>
     <slot name="modal">
 
     </slot>
-  </ModalBase>
+  </modal-base>
 
-  <TheMenu />
+  <util-aside-menu />
   
 </div>
 </template>
@@ -83,6 +83,7 @@ defineProps({
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+  gap: 8px;
 }
 .slot-name {
   font-size: 1.4rem;

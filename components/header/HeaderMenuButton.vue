@@ -30,7 +30,7 @@ const menu = useStoresMenu();
   height: 2px;
   background-color: var(--text-color);
 
-  transition-property: background-color, transform;
+  transition-property: transform;
   transition-duration: 300ms;
 }
 

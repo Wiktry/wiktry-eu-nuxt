@@ -24,6 +24,19 @@ onMounted(() => {
 </template>
 
 <style>
+.v-enter-active,
+.v-leave-active {
+  transition: left .5s ease;
+}
+
+.v-enter-from {
+  left: -100vw;
+}
+
+.v-leave-to {
+  left: 200vw;
+}
+
 .page {
   /*height: 100vh;
   height: calc(var(--vh, 1vh) * 100);

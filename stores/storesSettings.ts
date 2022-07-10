@@ -6,7 +6,8 @@ export const useStoresSettings = defineStore('stores-settings', {
     return {
       theme: {
         dark: false,
-        iconColor: 'rgb(44, 62, 80)'
+        iconColor: 'rgb(44, 62, 80)',
+        inactiveIconColor: 'grey'
       },
       ordet: {
         hideUsedLetters: false,
@@ -45,7 +46,8 @@ export const useStoresSettings = defineStore('stores-settings', {
       const settings = getLocalStorage('settings');
       if (settings) {
         if (settings.theme)
-          this.theme = settings.theme;
+          this.theme.dark = settings.theme.dark;
+          this.theme.iconColor = settings.theme.iconColor;
         if (settings.ordet)
           this.ordet = settings.ordet;
         

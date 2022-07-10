@@ -1,4 +1,5 @@
 <script setup>
+import { mdiWeatherNight, mdiWeatherSunny  } from '@mdi/js'; 
 import { computed } from '@vue/reactivity';
 import { useStoresSettings } from '@/stores/storesSettings.ts'; 
 const settings = useStoresSettings();
@@ -15,22 +16,18 @@ const classObject = computed(() => ({
     :class="{ 'theme-button-dark': settings.theme.dark }"
     @click="settings.changeTheme"
   >
-    <span 
-      class="circle" 
-      :class="{ 'circle-dark': settings.theme.dark }"
-    ></span>
+    <v-icon class="icon" :icon="mdiWeatherSunny" :color="!settings.theme.dark ? settings.theme.iconColor : settings.theme.inactiveIconColor" size="20" />
+    <v-icon class="icon" :icon="mdiWeatherNight" :color="settings.theme.dark ? settings.theme.iconColor : settings.theme.inactiveIconColor" size="20" />
   </button>
 </template>
 
 <style scoped>
 .theme-button {
-  min-height: 32px;
-  min-width: 60px;
+  height: 28px;
+  width: 52px;
   padding: 5px;
-  margin-left: 10px;
 
   background-color: var(--background-color);
-  background-image: var(--theme-selector-gradient);
   
   border-radius: 20px;
 
@@ -38,61 +35,35 @@ const classObject = computed(() => ({
 
   display: flex;
   flex-flow: row nowrap;
-  justify-content: flex-start;
+  justify-content: space-around;
+  align-items: center;
+  gap: 4px;
 }
 .theme-button-dark {
-  background-image: var(--theme-selector-gradient);
+  
 }
-.circle {
-  height: 23px;
-  width: 23px;
+.theme-button::after {
+  content: '';
+
+  height: 20px;
+  width: 20px;
+  position: absolute;
 
   background-color: var(--menu-background-color);
   border-radius: 20px;
 
   box-shadow: 0 0 4px 0 rgba(0,0,0,.4);
 
+  transform: translateX(-11.5px);
   transition: transform .3s ease;
 }
-.circle-dark {
-  transform: translate(27px);
+.theme-button-dark::after {
+  transform: translate(11.5px);
 }
-
-@media (max-height: 600px) {
-  .theme-button {
-    min-height: 16px;
-    min-width: 30px;
-    padding: 3px;
-    margin-left: 5px;
-    border-radius: 10px;
-    box-shadow: inset 0 0 2px 0 rgba(0,0,0,.6);
-  }
-  .circle {
-    height: 11px;
-    width: 11px;
-    box-shadow: 0 0 2px 0 rgba(0,0,0,.6);
-  }
-  .circle-dark {
-    transform: translate(13px);
-  }
+.icon {
+  z-index: 1;
 }
-
-@media (max-width: 4500px) {
-  .theme-button {
-    min-height: 20px;
-    min-width: 40px;
-    padding: 4px;
-    margin-left: 8px;
-    border-radius: 15px;
-    box-shadow: inset 0 0 2px 0 rgba(0,0,0,.6);
-  }
-  .circle {
-    height: 16px;
-    width: 16px;
-    box-shadow: 0 0 2px 0 rgba(0,0,0,.6);
-  }
-  .circle-dark {
-    transform: translate(17px);
-  }
+.focus {
+  color: blue;
 }
 </style>

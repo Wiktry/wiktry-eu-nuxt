@@ -11,21 +11,28 @@ const menu = useStoresMenu();
 
 <style scoped>
 .menu {
-  height: 100%;
-  width: 0;
-  background-color: var(--content-background-color);
   position: fixed;
+  height: 100%;
+  width: 400px;
+
+  background-color: var(--menu-background-color);
+  
   top: 40px;
+  left: -600px;
   z-index: 100;
-  transition: .3s ease;
+
+  border-top-right-radius: 20px;
+
+  transition: left .4s ease;
+
   align-self: start;
 }
 
 .show {
-  width: 400px;
+  left: 0;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .show {
     width: 100vw;
   }

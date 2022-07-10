@@ -1,0 +1,94 @@
+{
+  "swedish": {
+    "extra" : {
+      "country": {
+        "title": "Land",
+        "response": "Sverige"
+      },
+      "state": {
+        "title": "Landskap",
+        "response": "Skåne"
+      },
+      "city": {
+        "title": "Stad",
+        "response": "Hässleholm"
+      },
+      "age": {
+        "title": "Ålder",
+        "response": "23"
+      }
+    },
+    "lang": {
+      "swedish": {
+        "title": "Svenska",
+        "value": 100
+      },
+      "english": {
+        "title": "Engelska",
+        "value": 90
+      }
+    }
+  },
+  "english": {
+    "extra" : {
+      "country": {
+        "title": "Country",
+        "response": "Sweden"
+      },
+      "state": {
+        "title": "State",
+        "response": "Scania"
+      },
+      "city": {
+        "title": "City",
+        "response": "Hässleholm"
+      },
+      "age": {
+        "title": "Age",
+        "response": "23"
+      }
+    },
+    "lang": {
+      "swedish": {
+        "title": "Swedish",
+        "value": 100
+      },
+      "english": {
+        "title": "English",
+        "value": 90
+      }
+    }
+  },
+  "any": {
+    "pLang": {
+      "html": {
+        "title": "html",
+        "value": 85
+      },
+      "css": {
+        "title": "css",
+        "value": 75
+      },
+      "js": {
+        "title": "JS",
+        "value": 80
+      },
+      "react": {
+        "title": "React",
+        "value": 50
+      },
+      "vue": {
+        "title": "Vue",
+        "value": 70
+      },
+      "cpp": {
+        "title": "C++",
+        "value": 50
+      },
+      "python": {
+        "title": "python",
+        "value": 40
+      }
+    }
+  }
+}

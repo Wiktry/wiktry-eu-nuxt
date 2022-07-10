@@ -1,3 +1,11 @@
-<script>
-//window.location.href = 'https://wiktry-eu-nuxt.herokuapp.com/admin';
+<script setup>
+onBeforeMount(() => {
+  window.location.replace('https://wiktry-eu-nuxt.herokuapp.com/admin');
+})
 </script>
+
+<template>
+  <div>
+    test
+  </div>
+</template>
