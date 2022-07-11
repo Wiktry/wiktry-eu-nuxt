@@ -37,9 +37,12 @@ onMounted(() => {
 <style scoped>
 .game-layout {
   height: 100%;
+  width: 100%;
+  
+  overflow: hidden;
 }
 .content {
-  height: calc(100% - 60px);
+  height: calc(100% - 40px);
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
@@ -49,11 +52,5 @@ onMounted(() => {
 }
 .button {
   margin: 0 5px;
-}
-
-@media (max-height: 600px) {
-  .content {
-    height: calc(100% - 40px);
-  }
 }
 </style>

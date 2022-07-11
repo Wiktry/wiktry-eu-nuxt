@@ -35,6 +35,7 @@ const modal = useStoresModal();
   background-color: var(--content-background-color);
   position: fixed;
   overflow: hidden;
+  overflow-y: scroll;
 
   flex-flow: column nowrap;
   align-items: center;
@@ -73,7 +74,7 @@ const modal = useStoresModal();
 }
 
 /* If the screen is more than 500px wide */
-@media (min-width: 500px) {
+@media (min-width: 800px) {
   .modal {
     display: none;
     height: auto;

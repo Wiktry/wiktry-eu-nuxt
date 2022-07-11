@@ -39,9 +39,6 @@ const classObject = computed(() => ({
   align-items: center;
   gap: 4px;
 }
-.theme-button-dark {
-  
-}
 .theme-button::after {
   content: '';
 

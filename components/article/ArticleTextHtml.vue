@@ -8,18 +8,18 @@ const props = defineProps({
 </script>
 
 <template>
-  <div v-html="text" />
+  <div v-html="text" class="html"/>
 </template>
 
 <style>
-h2 {
+.html h2{
   margin: 20px 0;
 }
-h2::before {
+.html h2::before {
   content: '#';
   margin-right: 4px;
 }
-pre {
+.html pre {
   margin: 20px 0;
   padding: 20px;
   max-width: 100%;
@@ -31,7 +31,7 @@ pre {
 
   font-family: 'Fira Code', monospace;
 }
-code {
+.html code {
   font-family: 'Fira Code', monospace;
 }
 </style>

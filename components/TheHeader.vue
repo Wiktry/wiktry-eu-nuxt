@@ -16,26 +16,21 @@ defineProps({
 </script>
 
 <template>
-<div class="header">
-  <div class="upper-header" :class="{ 'only-menu': onlyMenu }">
-    <div class="util-area">
-      <header-menu-button />
-      <header-home-button />
-      <header-theme-selector />
-    </div>
-    <div class="slot-name" v-if="!onlyMenu">
-      <slot name="name">
-        
-      </slot>
-    </div>
-    <div class="slot-icons" v-if="!onlyMenu">
-      <slot name="icons">
-
-      </slot>
-    </div>
+<div class="header" :class="{ 'only-menu': onlyMenu }">
+  <div class="util-area">
+    <header-menu-button />
+    <header-home-button />
+    <header-theme-selector />
   </div>
-  <div class="lower-header">
-    <div class="lower-header-left"></div>
+  <div class="slot-name" v-if="!onlyMenu">
+    <slot name="name">
+      
+    </slot>
+  </div>
+  <div class="slot-icons" v-if="!onlyMenu">
+    <slot name="icons">
+
+    </slot>
   </div>
 
   <modal-base>
@@ -51,15 +46,6 @@ defineProps({
 
 <style scoped>
 .header {
-  height: 60px;
-  width: 100%;
-
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
-  align-items: center;
-}
-.upper-header {
   height: 40px;
   width: 100%;
 
@@ -132,15 +118,9 @@ defineProps({
   align-items: center;
 }
 
-@media (max-height: 600px) {
-  .header {
-    height: 40px;
-  }
-  .upper-header {
-    height: 30px;
-  }
-  .lower-header-left {
-    height: 10px;
+@media (max-width: 800px) {
+  .util-area {
+    gap: 4px;
   }
 }
 
