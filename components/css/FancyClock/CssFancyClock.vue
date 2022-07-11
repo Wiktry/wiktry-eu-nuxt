@@ -116,7 +116,7 @@ onMounted(() => {
 
 @media (max-width: 600px) {
   .container {
-    width: 100vw;
+    width: calc(100vw - 12px);
   }
 }
 </style>

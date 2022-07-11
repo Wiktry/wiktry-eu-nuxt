@@ -26,7 +26,7 @@ const props = defineProps({
   overflow-x: scroll;
 
   background-color: var(--menu-background-color);
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(0, 0, 0, .4);
   border-radius: 6px;
 
   font-family: 'Fira Code', monospace;
