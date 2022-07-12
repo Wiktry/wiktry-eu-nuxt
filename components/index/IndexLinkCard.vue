@@ -3,14 +3,13 @@ import { mdiArrowRight } from '@mdi/js';
 const props = defineProps({
   article: {
     type: Object,
-    required: true
+    default: undefined,
   }
 })
-console.log(props.article);
 </script>
 
 <template>
-  <div class="card">
+  <div class="card" v-if="article !== undefined">
     <img :src="article.imgurl" class="img" alt="error" />
     <div class="container">
       <p class="title">{{ article.title }}</p>
@@ -20,6 +19,9 @@ console.log(props.article);
         <v-icon class="icon" :icon="mdiArrowRight" size="22" />
       </NuxtLink>
     </div>
+  </div>
+  <div class="card" v-else>
+    <util-skeleton-loader />
   </div>
 </template>
 

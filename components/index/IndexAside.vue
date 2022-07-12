@@ -1,6 +1,9 @@
 <script setup>
 import { mdiLinkedin, mdiGithub } from '@mdi/js';
+import { useWindowSize } from "@vueuse/core";
 import { swedish, english, any } from '@/assets/index/IndexText.json';
+
+const { width } = useWindowSize();
 
 const props = defineProps({
   language: {
@@ -8,8 +11,6 @@ const props = defineProps({
     default: 'swedish'
   }
 })
-
-console.log(props);
 
 const text = reactive({
   extra: swedish.extra,
@@ -38,10 +39,12 @@ onMounted(() => {
 const changeUrl = (url) => {
   window.open(url, '_blank').focus();
 }
+
+const openAside = ref(false);
 </script>
 
 <template>
-  <aside class="personal-info">
+  <aside class="personal-info" :class="{ 'aside-open': openAside }">
     <div class="name-title">
       <img src="~/assets/index/portrait.png" height="100" width="100" class="img" />
       <span class="bold text-name">Wiktor Rydlund</span>
@@ -85,15 +88,15 @@ const changeUrl = (url) => {
       <button @click="changeUrl('https://github.com/Wiktry/wiktry-eu-nuxt')" class="footer-button">
         <v-icon :icon="mdiGithub" size="32" />
       </button>
-      <div class="footer-button">
-        <header-theme-selector />
-      </div>
       <button class="footer-button" @click="$emit('changeLanguage')">
         <div class="language-select">
           <img src="~/assets/index/se.svg" height="27" width="36" v-if="props.language === 'swedish'"/>
           <img src="~/assets/index/us.svg" height="27" width="36" v-else-if="props.language === 'english'"/>
         </div>
       </button>
+      <div class="footer-button" v-if="width <= 600">
+        <index-aside-reveal @reveal="openAside = !openAside" :active="openAside" />
+      </div>
     </div>
   </aside>
 </template>
@@ -210,6 +213,15 @@ const changeUrl = (url) => {
   .personal-info {
     width: 100vw;
     min-height: 100vh;
+
+    z-index: 1;
+    position: fixed;
+    left: -100vw;
+
+    transition: left .3s ease
+  }
+  .aside-open {
+    left: 0;
   }
   .aside-footer {
     width: 100vw;

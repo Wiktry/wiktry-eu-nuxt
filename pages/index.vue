@@ -1,24 +1,28 @@
 <script setup>
-const router = useRouter();
-//navigateTo('/games/ordet');
-
 const { find } = useStrapi4();
-const showcasesSv = reactive(await find('showcases', { populate: 'card', locale: 'sv' }));
-const gamesSv = reactive(await find('games', { populate: 'card', locale: 'sv' }));
-const showcasesEn = reactive(await find('showcases', { populate: 'card', locale: 'en' }));
-const gamesEn = reactive(await find('games', { populate: 'card', locale: 'en' }));
 
 const language = ref('swedish');
 
 const changeLanguage = () => {
-  console.log('hello');
-  console.log(language.value);
   if (language.value === 'swedish') {
     language.value = 'english';
   } else {
     language.value = 'swedish';
   }
 }
+
+let cards = reactive({
+  showcasesSv: undefined,
+  showcasesEn: undefined,
+  gamesSv: undefined,
+  gamesEn: undefined
+})
+onMounted(async () => {
+  cards.showcasesSv = await find('showcases', { populate: 'card', locale: 'sv' });
+  cards.showcasesEn = await find('showcases', { populate: 'card', locale: 'en' });
+  cards.gamesSv = await find('games', { populate: 'card', locale: 'sv' });
+  cards.gamesEn = await find('games', { populate: 'card', locale: 'en' });
+})
 </script>
 
 <template>
@@ -35,10 +39,22 @@ const changeLanguage = () => {
     </div>
     <div class="projects">
       <div class="games">
-        <index-link-card v-for="article in language.value === 'swedish' ? gamesSv.data : gamesEn.data" :key="article.id" :article="article.attributes.card" />
+        <h2>Games</h2>
+        <div class="card-container" v-if="cards.gamesEn">
+          <index-link-card v-for="article in language.value === 'swedish' ? cards.gamesSv.data : cards.gamesEn.data" :key="article.id" :article="article.attributes.card" />
+        </div>
+        <div class="card-container" v-else>
+          <index-link-card skeleton />
+        </div>
       </div>
       <div class="showcases">
-        <index-link-card v-for="article in language.value === 'swedish' ? showcasesSv.data : showcasesEn.data" :key="article.id" :article="article.attributes.card" />
+        <h2>CSS Showcases</h2>
+        <div class="card-container" v-if="cards.showcasesEn">
+          <index-link-card v-for="article in language.value === 'swedish' ? cards.showcasesSv.data : cards.showcasesEn.data" :key="article.id" :article="article.attributes.card" />
+        </div>
+        <div class="card-container" v-else>
+          <index-link-card skeleton />
+        </div>
       </div>
     </div>
   </article>
@@ -70,7 +86,6 @@ const changeLanguage = () => {
   font-weight: 400;
   color: var(--main-text);
 }
-
 .text-name {
   font-size: 1.4rem;
 }
