@@ -1,11 +1,16 @@
 <script setup>
 import { provide, ref, onMounted } from 'vue';
 import { useStoresSettings } from '@/stores/storesSettings.ts';
+import { useStoresStrapi } from '@/stores/storesStrapi.ts';
 
 const settings = useStoresSettings();
+const strapi = useStoresStrapi();
 
-onMounted(() => {
+onMounted(async () => {
+  const { find } = useStrapi4();
+
   settings.fromLocalStorage();
+  strapi.init(find);
 
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);

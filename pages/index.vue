@@ -1,4 +1,7 @@
 <script setup>
+import { useStoresStrapi } from '@/stores/storesStrapi.ts';
+const strapi = useStoresStrapi();
+
 const { find } = useStrapi4();
 
 const language = ref('swedish');
@@ -10,19 +13,6 @@ const changeLanguage = () => {
     language.value = 'swedish';
   }
 }
-
-let cards = reactive({
-  showcasesSv: undefined,
-  showcasesEn: undefined,
-  gamesSv: undefined,
-  gamesEn: undefined
-})
-onMounted(async () => {
-  cards.showcasesSv = await find('showcases', { populate: 'card', locale: 'sv' });
-  cards.showcasesEn = await find('showcases', { populate: 'card', locale: 'en' });
-  cards.gamesSv = await find('games', { populate: 'card', locale: 'sv' });
-  cards.gamesEn = await find('games', { populate: 'card', locale: 'en' });
-})
 </script>
 
 <template>
@@ -40,21 +30,31 @@ onMounted(async () => {
     <div class="projects">
       <div class="games">
         <h2>Games</h2>
-        <div class="card-container" v-if="cards.gamesEn && cards.gamesSv">
-          <index-link-card v-for="article in language.value === 'swedish' ? cards.gamesSv.data : cards.gamesEn.data" :key="article.id" :article="article.attributes.card" />
-        </div>
-        <div class="card-container" v-else>
-          <index-link-card skeleton />
-        </div>
+          <div class="card-container" v-if="!strapi.isLoading">
+            <div v-if="language === 'swedish'">
+              <index-link-card v-for="article in strapi.cardsSv.games" :key="article.id" :article="article.attributes.card" />
+            </div>
+            <div v-else-if="language === 'english'">
+              <index-link-card v-for="article in strapi.cardsEn.games" :key="article.id" :article="article.attributes.card" />
+            </div>
+          </div>
+          <div class="card-container" v-else>
+            <index-link-card />
+          </div>
       </div>
       <div class="showcases">
-        <h2>CSS Showcases</h2>
-        <div class="card-container" v-if="cards.showcasesEn && cards.showcasesSv">
-          <index-link-card v-for="article in language.value === 'swedish' ? cards.showcasesSv.data : cards.showcasesEn.data" :key="article.id" :article="article.attributes.card" />
-        </div>
-        <div class="card-container" v-else>
-          <index-link-card skeleton />
-        </div>
+          <h2>CSS Showcases</h2>
+          <div class="card-container" v-if="!strapi.isLoading">
+            <div v-if="language === 'swedish'">
+              <index-link-card v-for="article in strapi.cardsSv.showcases" :key="article.id" :article="article.attributes.card" />
+            </div>
+            <div v-else-if="language === 'english'">
+              <index-link-card v-for="article in strapi.cardsEn.showcases" :key="article.id" :article="article.attributes.card" />
+            </div>
+          </div>
+          <div class="card-container" v-else>
+            <index-link-card />
+          </div>
       </div>
     </div>
   </article>
@@ -110,18 +110,6 @@ onMounted(async () => {
 .content {
   margin-left: 300px;
 }
-
-/*.content {
-  height: 400px;
-  width: 600px;
-
-  border-radius: 8px;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(20px);
-  background-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.25);
-  border: 1px solid rgba(0, 0, 0, 0.3)
-}*/
 
 @media (max-width: 600px) {
   .main {
