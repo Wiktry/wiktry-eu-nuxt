@@ -19,7 +19,7 @@ const { isSwiping, distanceY } = usePointerSwipe(el, {
     }
   },
   onSwipeEnd(e, direction) {
-    if (Math.abs(distanceY.value) / containerHeight.value >= 0.25) {
+    if (Math.abs(distanceY.value) / containerHeight.value >= 0.15) {
       top.value = '-100%';
       opacity.value = 0;
     } else {

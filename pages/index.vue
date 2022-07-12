@@ -40,7 +40,7 @@ onMounted(async () => {
     <div class="projects">
       <div class="games">
         <h2>Games</h2>
-        <div class="card-container" v-if="cards.gamesEn">
+        <div class="card-container" v-if="cards.gamesEn && cards.gamesSv">
           <index-link-card v-for="article in language.value === 'swedish' ? cards.gamesSv.data : cards.gamesEn.data" :key="article.id" :article="article.attributes.card" />
         </div>
         <div class="card-container" v-else>
@@ -49,7 +49,7 @@ onMounted(async () => {
       </div>
       <div class="showcases">
         <h2>CSS Showcases</h2>
-        <div class="card-container" v-if="cards.showcasesEn">
+        <div class="card-container" v-if="cards.showcasesEn && cards.showcasesSv">
           <index-link-card v-for="article in language.value === 'swedish' ? cards.showcasesSv.data : cards.showcasesEn.data" :key="article.id" :article="article.attributes.card" />
         </div>
         <div class="card-container" v-else>

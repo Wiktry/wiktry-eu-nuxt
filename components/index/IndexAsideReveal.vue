@@ -1,7 +1,9 @@
 <script setup>
 import { mdiArrowRight } from '@mdi/js'; 
-import { useStoresSettings } from '@/stores/storesSettings.ts'; 
+import { useStoresSettings } from '@/stores/storesSettings.ts';
 const settings = useStoresSettings();
+import { useWindowSize } from "@vueuse/core";
+const { width } = useWindowSize();
 
 defineProps({
   active: {
@@ -17,7 +19,7 @@ const onClick = () => {
 </script>
 
 <template>
-  <button class="scroll" @click="onClick" :class="{ 'scroll-active': !active }">
+  <button class="scroll" @click="onClick" :class="{ 'scroll-active': !active }" :style="{ '--width': width + 'px' }">
     <v-icon class="icon" :class="{ active: active }" :icon="mdiArrowRight" :color="settings.theme.iconColor" size="28" />
   </button>
 </template>
@@ -26,16 +28,14 @@ const onClick = () => {
 .scroll {
   position: fixed;
   bottom: 0;
-  right: 30px;
-  z-index: 100;
+  right: calc(var(--width) * 0.05);
+  z-index: 1;
 
-  height: 38px;
+  height: 50px;
   width: 60px;
 
   border-radius: 6px;
-
   background-color: var(--main-middle-dark);
-  
 
   transition: .3s;
 }

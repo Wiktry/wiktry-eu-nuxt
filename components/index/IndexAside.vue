@@ -104,15 +104,14 @@ const openAside = ref(false);
 <style scoped>
 .personal-info {
   width: 300px;
-  height: 100vh;
-  max-height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
 
   background-color: var(--main-dark);
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.6);
 
-  display: flex;
+  /*display: flex;
   flex-flow: column nowrap;
-  justify-content: space-between;
+  justify-content: space-between;*/
 }
 .name-title {
   height: 200px;
@@ -132,7 +131,8 @@ const openAside = ref(false);
 
 .experience-cont {
   width: 100%;
-  height: 100%;
+  height: calc(100% - 200px - 60px);
+  padding-bottom: 60px;
   overflow-y: scroll;
   display: flex;
   justify-content: center;
@@ -160,8 +160,11 @@ const openAside = ref(false);
 }
 
 .aside-footer {
-  width: 300px;
-  height: 60px;
+  width: 100%;
+  height: 50px;
+
+  position: absolute;
+  bottom: 0;
 
   background-color: var(--main-middle-dark);
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.6);
@@ -222,9 +225,6 @@ const openAside = ref(false);
   }
   .aside-open {
     left: 0;
-  }
-  .aside-footer {
-    width: 100vw;
   }
 }
 </style>
