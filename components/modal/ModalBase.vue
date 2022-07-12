@@ -22,6 +22,7 @@ const modal = useStoresModal();
   margin-top: 40px;
   position: fixed;
   z-index: 50;
+  top: 0;
 
   display: flex;
   justify-content: center;

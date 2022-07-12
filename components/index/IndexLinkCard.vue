@@ -76,8 +76,6 @@ const props = defineProps({
   font-size: 1.2rem;
   font-weight: 500;
 }
-.desc {
-}
 .button {
   width: 100%;
   height: 36px;

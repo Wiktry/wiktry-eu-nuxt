@@ -7,21 +7,22 @@ defineProps({
   deg: {
     type: Number,
     default: 0
+  },
+  active: {
+    type: Boolean,
+    default: false
   }
 })
-
-const active = ref(false);
 
 const emit = defineEmits(['scroll']);
 
 const onClick = () => {
   emit('scroll');
-  active.value = !active.value;
 }
 </script>
 
 <template>
-  <button class="scroll" @click="onClick" :style="{ '--deg': deg + 'deg' }">
+  <button class="scroll" :class="{ active: active }" @click="onClick" :style="{ '--deg': deg + 'deg' }">
     <!--<v-icon class="icon" :class="{ active: active }" :icon="mdiArrowRight" :color="settings.theme.iconColor" size="28" />-->
     <svg height="60" width="40" :style="{ '--icon': settings.theme.iconColor }">
       <polyline points="10,20 20,30 30,20" style="fill:none;stroke-width:3" class="arrow arrow-1" />
@@ -46,14 +47,14 @@ const onClick = () => {
   background-color: var(--menu-background-color);
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
 
-  transform: rotateZ(var(--deg));
+  transition: .3s ease;
 }
 .icon {
   transform: rotateZ(-90deg);
   transition: transform .4s ease;
 }
 .active {
-  transform: rotateZ(450deg);
+  opacity: 0;
 }
 
 .arrow {

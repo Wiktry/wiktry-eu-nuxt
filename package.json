@@ -16,6 +16,7 @@
   "dependencies": {
     "@pinia/nuxt": "^0.1.9",
     "@vitejs/plugin-vue": "^2.3.3",
+    "@vueuse/components": "^8.9.2",
     "mdi": "^2.2.43",
     "pinia": "^2.0.14",
     "sass": "^1.52.1",

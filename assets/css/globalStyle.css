@@ -87,8 +87,7 @@ body {
 }
 
 #__nuxt {
-  overflow-y: scroll;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .page-enter-from{
