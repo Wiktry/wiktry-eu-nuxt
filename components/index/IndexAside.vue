@@ -44,7 +44,7 @@ const openAside = ref(false);
 </script>
 
 <template>
-  <aside class="personal-info" :class="{ 'aside-open': openAside }">
+  <aside class="personal-info" :class="{ 'aside-open': openAside }" :style="{ '--width': width + 'px', '--padding': (width - 240) / 2 + 'px' }">
     <div class="name-title">
       <img src="~/assets/index/portrait.png" height="100" width="100" class="img" />
       <span class="bold text-name">Wiktor Rydlund</span>
@@ -81,6 +81,7 @@ const openAside = ref(false);
         </div>
       </div>
     </div>
+    <div class="footer-pusher"></div>
     <div class="aside-footer">
       <button @click="changeUrl('https://www.linkedin.com/in/wiktor-rydlund/')" class="footer-button">
         <v-icon :icon="mdiLinkedin" size="32" />
@@ -108,10 +109,6 @@ const openAside = ref(false);
 
   background-color: var(--main-dark);
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.6);
-
-  /*display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;*/
 }
 .name-title {
   height: 200px;
@@ -131,14 +128,14 @@ const openAside = ref(false);
 
 .experience-cont {
   width: 100%;
-  height: calc(100% - 200px - 60px);
-  padding-bottom: 60px;
-  overflow-y: scroll;
+  height: calc(100% - 200px - 50px);
   display: flex;
   justify-content: center;
 }
 .experience {
-  width: 240px;
+  width: 300px;
+  padding: 0 30px;
+  overflow-y: scroll;
 }
 .extra-info {
   width: 240px;
@@ -160,10 +157,10 @@ const openAside = ref(false);
 }
 
 .aside-footer {
-  width: 100%;
+  width: 300px;
   height: 50px;
 
-  position: absolute;
+  position: fixed;
   bottom: 0;
 
   background-color: var(--main-middle-dark);
@@ -215,7 +212,6 @@ const openAside = ref(false);
 @media (max-width: 600px) {
   .personal-info {
     width: 100vw;
-    min-height: 100vh;
 
     z-index: 1;
     position: fixed;
@@ -223,8 +219,19 @@ const openAside = ref(false);
 
     transition: left .3s ease
   }
+  .experience {
+    width: 100%;
+    padding: 0 var(--padding);
+  }
   .aside-open {
     left: 0;
+  }
+  .footer-pusher {
+    height: 50px;
+    width: 100%;
+  }
+  .aside-footer {
+    width: var(--width);
   }
 }
 </style>
