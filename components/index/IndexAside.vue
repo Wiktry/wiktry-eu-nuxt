@@ -91,8 +91,10 @@ const openAside = ref(false);
       </button>
       <button class="footer-button" @click="$emit('changeLanguage')">
         <div class="language-select">
-          <img src="~/assets/index/se.svg" height="27" width="36" v-if="props.language === 'swedish'"/>
-          <img src="~/assets/index/us.svg" height="27" width="36" v-else-if="props.language === 'english'"/>
+          <Transition mode="out-in">
+            <img src="~/assets/index/se.svg" height="27" width="36" v-if="props.language === 'swedish'"/>
+            <img src="~/assets/index/us.svg" height="27" width="36" v-else-if="props.language === 'english'"/>
+          </Transition>
         </div>
       </button>
       <div class="footer-button" v-if="width <= 600">
@@ -103,6 +105,16 @@ const openAside = ref(false);
 </template>
 
 <style scoped>
+
+.v-enter-active,
+.v-leave-active {
+  transition: 0.5s ease;
+}
+.v-enter-from,
+.v-leave-to {
+  width: 0;
+}
+
 .personal-info {
   width: 300px;
   height: calc(var(--vh, 1vh) * 100);
@@ -192,6 +204,9 @@ const openAside = ref(false);
 }
 .language-select {
   height: 27px;
+}
+.language-select > img {
+  object-fit: cover;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.6);
 }
 

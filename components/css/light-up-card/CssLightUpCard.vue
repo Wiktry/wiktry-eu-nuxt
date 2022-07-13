@@ -35,11 +35,9 @@ const list = [0,1,2,3,4,5]
   z-index: 1234;
 }
 
-.main > ul  {
-  list-style: none;
-}
-
 .list {
+  list-style: none;
+  
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
@@ -75,7 +73,7 @@ const list = [0,1,2,3,4,5]
   opacity: var(--border-opacity);
 
   transition: .4s ease;
-  background-image: radial-gradient(400px circle at calc(var(--x) - var(--ix)) calc(var(--y) - var(--iy)), rgba(255,255,255,0.1), transparent 80%);
+  background-image: radial-gradient(400px circle at calc(var(--x) - var(--ix)) calc(var(--y) - var(--iy)), rgba(255,255,255,0.12), transparent 80%);
 }
 .card-overlay {
   pointer-events: none;

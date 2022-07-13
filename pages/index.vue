@@ -20,7 +20,7 @@ const changeLanguage = () => {
   
   <index-aside :language="language" @change-language="changeLanguage"></index-aside>
 
-  <article class="content">
+  <article class="index-content">
     <div class="hero">
 
     </div>
@@ -58,23 +58,15 @@ const changeLanguage = () => {
       </div>
     </div>
   </article>
+
+  <div class="flex-pusher"></div>
 </div>
 </template>
 
-<style>
+<style >
 .main {
-  --main-dark: rgb(26, 55, 77);
-  --main-middle-dark: rgb(43, 76, 99);
-  --main-middle-dark-hover: rgb(64, 100, 126);
-  --main-middle-light: rgb(105, 152, 171);
-  --main-light: rgb(177, 208, 224);
-  --main-accent: rgb(77, 26, 55);
-  --main-accent-light: rgb(157, 21, 98);
-  --main-text: #fff;
-  --sub-title: hsl(206, 50%, 20%);
-
   width: 100%;
-  height: 100%;
+  position: fixed;
 
   display: flex;
   flex-flow: row nowrap;
@@ -107,8 +99,22 @@ const changeLanguage = () => {
   color: var(--main-middle-light);
 }
 
-.content {
-  margin-left: 300px;
+.index-content {
+  max-height: calc(var(--vh, 1vh) * 100);
+  overflow-y: scroll;
+  background-color: var(--main-dark);
+}
+
+.card-container > div {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 20px;
+}
+
+
+.flex-pusher {
+  width: 10px;
+  height: 50vh;
 }
 
 @media (max-width: 600px) {
@@ -117,6 +123,10 @@ const changeLanguage = () => {
   }
   .content {
     margin-left: 0;
+  }
+  .flex-pusher {
+    height: 0;
+    width: 0;
   }
 }
 </style>

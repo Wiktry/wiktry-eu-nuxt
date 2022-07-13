@@ -50,7 +50,7 @@ useEventListener('keydown', useKey);
 </script>
 
 <template>
-  <NuxtLayout name="games">
+  <NuxtLayout name="layout-games">
 
     <template #name>
       <text>Ordet</text>

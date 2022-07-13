@@ -36,7 +36,7 @@ onMounted(() => {
 
 <style scoped>
 .game-layout {
-  height: 100%;
+  height: calc(var(--vh, 1vh) * 100);
   width: 100%;
   
   overflow: hidden;

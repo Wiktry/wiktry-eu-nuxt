@@ -4,6 +4,7 @@
 
   --main-dark: rgb(26, 55, 77);
   --main-middle-dark: rgb(43, 76, 99);
+  --main-middle-dark-hover: rgb(64, 100, 126);
   --main-middle-light: rgb(105, 152, 171);
   --main-light: rgb(177, 208, 224);
   --main-accent: rgb(77, 26, 55);
@@ -67,7 +68,7 @@
   --keyboard-key-border-image-gradiant: linear-gradient(to top, rgba(255,255,255,1) 20%, rgba(0,0,0,0) 80%) 1;
 }
 
-html, body, #__nuxt {
+/*html, body, #__nuxt {
   width: 100%;
   height: 100%;
 }
@@ -88,6 +89,12 @@ body {
 
 #__nuxt {
   overflow: hidden;
+}*/
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
 }
 
 .page-enter-from{

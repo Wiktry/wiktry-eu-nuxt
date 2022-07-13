@@ -1,10 +1,10 @@
 <script setup>
-import { useScroll, useWindowSize, usePointerSwipe } from "@vueuse/core";
+import { useWindowScroll, useWindowSize, usePointerSwipe, useEventListener } from "@vueuse/core";
 import { vScroll } from '@vueuse/components';
 
 const frame = ref(null);
 const { height, width } = useWindowSize();
-const { y } = useScroll(frame);
+const { y } = useWindowScroll();
 const oldY = ref(0);
 
 const el = ref(null);
@@ -14,14 +14,19 @@ const containerHeight = computed(() => el.value.offsetHeight)
 
 // This shouldn't be necessary. But without it, desktop chrome spazzes out
 // So here it is
-const onScroll = (state) => {
-  if (state.y.value < 60 && oldY.value >= 60) {
-    frame.value.scrollTop = 0;
-    oldY.value = 0;
-  } else if (oldY.value < state.y.value) {
-    oldY.value = state.y.value;
+useEventListener(window, 'scroll', evt => {
+  if (width.value < 600) {
+    return;
   }
-}
+
+  const y = evt.target.documentElement.scrollTop;
+  if (y < 60 && oldY.value >= 60) {
+    window.scrollTo(0,0);
+    oldY.value = 0;
+  } else if (oldY.value < y) {
+    oldY.value = y;
+  }
+})
 
 const { isSwiping, distanceY } = usePointerSwipe(el, {
   onSwipe(e) {
@@ -44,7 +49,7 @@ const { isSwiping, distanceY } = usePointerSwipe(el, {
 </script>
 
 <template>
-  <div class="frame" :class="{ 'frame-active': y > 60 && width > 600 }" :style="{ '--y': y + 'px' }" ref="frame" v-scroll="onScroll">
+  <div class="frame" :class="{ 'frame-active': y > 60 && width > 600, 'frame-locked': opacity }" :style="{ '--y': y + 'px' }" ref="frame">
     <div v-if="width > 600" class="css-pusher" :class="{ 'css-pusher-active': y > 60 && width > 600 }"></div>
     <div class="css" :class="{ 'css-active': y > 60 && width > 600, 'css-swipe': !isSwiping }" :style="{ '--top': top, '--op': opacity }" ref="el">
       <slot name="css"></slot>
@@ -60,13 +65,10 @@ const { isSwiping, distanceY } = usePointerSwipe(el, {
 <style scoped>
 .frame {
   height: 100%;
-  overflow: inherit;
-  overflow-y: scroll;
 }
 .css-pusher {
   height: calc(var(--vh, 1vh) * 100);
   width: 100vw;
-  z-index: 2;
   position: relative;
 
   transition: height .5s ease;
@@ -124,6 +126,9 @@ const { isSwiping, distanceY } = usePointerSwipe(el, {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+  }
+  .frame-locked {
+    position: fixed;
   }
   .css {
     top: var(--top);
