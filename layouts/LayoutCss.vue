@@ -99,9 +99,10 @@ const { isSwiping, distanceY } = usePointerSwipe(el, {
 }
 .article {
   margin-left: calc(50vw - 400px - 150px);
-  padding: 120px 20px;
+  padding: 160px 20px;
 
   width: 800px;
+  min-height: 120vh;
 
   display: flex;
   flex-flow: column nowrap;

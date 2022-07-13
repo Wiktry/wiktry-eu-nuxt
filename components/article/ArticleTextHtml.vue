@@ -34,4 +34,21 @@ const props = defineProps({
 .html code {
   font-family: 'Fira Code', monospace;
 }
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 6px;
+  float: right;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,.2);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 </style>

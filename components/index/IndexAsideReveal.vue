@@ -20,7 +20,7 @@ const onClick = () => {
 
 <template>
   <button class="scroll" @click="onClick" :class="{ 'scroll-active': !active }" :style="{ '--width': width + 'px' }">
-    <v-icon class="icon" :class="{ active: active }" :icon="mdiArrowRight" :color="settings.theme.iconColor" size="28" />
+    <v-icon class="icon" :class="{ active: active }" :icon="mdiArrowRight" size="28" />
   </button>
 </template>
 

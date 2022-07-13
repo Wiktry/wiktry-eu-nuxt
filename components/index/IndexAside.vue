@@ -136,6 +136,7 @@ const openAside = ref(false);
   width: 300px;
   padding: 0 30px;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 .extra-info {
   width: 240px;
@@ -192,6 +193,22 @@ const openAside = ref(false);
 .language-select {
   height: 27px;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.6);
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  float: right;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,.2);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 @keyframes icon-party {
