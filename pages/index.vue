@@ -16,7 +16,7 @@ const changeLanguage = () => {
 </script>
 
 <template>
-<div class="main">
+<div class="index-main">
   
   <index-aside :language="language" @change-language="changeLanguage"></index-aside>
 
@@ -64,7 +64,7 @@ const changeLanguage = () => {
 </template>
 
 <style >
-.main {
+.index-main {
   width: 100%;
   position: fixed;
 
