@@ -11,6 +11,9 @@
   --main-accent-light: rgb(157, 21, 98);
   --main-text: #fff;
   --sub-title: hsl(206, 50%, 20%);
+
+  --scrollbar-color: rgb(149, 149, 149);
+  --scrollbar-track-color: rgb(23, 23, 23);
   
   /* Text colors */
   --text-color: rgb(44, 62, 80);
@@ -116,19 +119,20 @@ body {
   height: 0;
 }
 
-@media (max-width: var(--mobile-width)) {
-  ::-webkit-scrollbar {
-    width: 0px;
-  }
-  ::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: rgba(0,0,0,.2);
-    border-radius: 6px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
+
+::-webkit-scrollbar {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track-color);
+}
+::-webkit-scrollbar:hover {
+  background: var(--scrollbar-track-color);
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-color);
+  border-radius: 6px;
 }

@@ -2,38 +2,25 @@
 import { mdiLinkedin, mdiGithub } from '@mdi/js';
 import { useWindowSize } from "@vueuse/core";
 import { swedish, english, any } from '@/assets/index/IndexText.json';
+import { useStoresSettings } from '@/stores/storesSettings.ts';
 
+const settings = useStoresSettings();
 const { width } = useWindowSize();
 
-const props = defineProps({
-  language: {
-    type: String,
-    default: 'swedish'
+const text = computed(() => {
+  if (settings.language === 'swedish') {
+    return {
+      extra: swedish.extra,
+      lang: swedish.lang,
+      pLang: any.pLang
+    }
+  } else if (settings.language === 'english') {
+    return {
+      extra: english.extra,
+      lang: english.lang,
+      pLang: any.pLang
+    }
   }
-})
-
-const text = reactive({
-  extra: swedish.extra,
-  lang: swedish.lang,
-  pLang: any.pLang
-});
-
-const changeLang = (lang) => {
-  if (lang === 'swedish') {
-    text.extra = swedish.extra;
-    text.lang = swedish.lang;
-  } else if (lang === 'english') {
-    text.extra = english.extra;
-    text.lang = english.lang;
-  }
-}
-
-watch(props, newLang => {
-  changeLang(newLang.language);
-})
-
-onMounted(() => {
-  changeLang(props.language);
 })
 
 const changeUrl = (url) => {
@@ -89,11 +76,11 @@ const openAside = ref(false);
       <button @click="changeUrl('https://github.com/Wiktry/wiktry-eu-nuxt')" class="footer-button">
         <v-icon :icon="mdiGithub" size="32" />
       </button>
-      <button class="footer-button" @click="$emit('changeLanguage')">
+      <button class="footer-button" @click="settings.changeLanguage">
         <div class="language-select">
           <Transition mode="out-in">
-            <img src="~/assets/index/se.svg" height="27" width="36" v-if="props.language === 'swedish'"/>
-            <img src="~/assets/index/us.svg" height="27" width="36" v-else-if="props.language === 'english'"/>
+            <img src="~/assets/index/se.svg" height="27" width="36" v-if="settings.language === 'swedish'"/>
+            <img src="~/assets/index/us.svg" height="27" width="36" v-else-if="settings.language === 'english'"/>
           </Transition>
         </div>
       </button>
@@ -108,7 +95,7 @@ const openAside = ref(false);
 
 .v-enter-active,
 .v-leave-active {
-  transition: 0.5s ease;
+  transition: 0.2s ease;
 }
 .v-enter-from,
 .v-leave-to {
@@ -181,6 +168,7 @@ const openAside = ref(false);
 
   display: flex;
   flex-flow: row nowrap;
+  justify-content: space-evenly;
 }
 
 .footer-button {
@@ -208,22 +196,6 @@ const openAside = ref(false);
 .language-select > img {
   object-fit: cover;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.6);
-}
-
-::-webkit-scrollbar {
-  width: 4px;
-  float: right;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: rgba(0,0,0,.2);
-  border-radius: 6px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
 }
 
 @keyframes icon-party {

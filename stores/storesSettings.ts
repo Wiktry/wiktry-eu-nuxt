@@ -4,6 +4,7 @@ import { getLocalStorage, putLocalStorage } from "~~/scripts/localStorage";
 export const useStoresSettings = defineStore('stores-settings', {
   state: () => {
     return {
+      language: 'english',
       theme: {
         dark: false,
         iconColor: 'rgb(44, 62, 80)',
@@ -15,6 +16,14 @@ export const useStoresSettings = defineStore('stores-settings', {
     }
   },
   actions: {
+    changeLanguage() {
+      if (this.language === 'swedish') {
+        this.language = 'english';
+      } else {
+        this.language = 'swedish';
+      }
+      this.toLocalStorage();
+    },
     changeTheme() {
       if (this.theme.dark) {
         this.theme.dark = false;
@@ -36,6 +45,7 @@ export const useStoresSettings = defineStore('stores-settings', {
 
     toLocalStorage() {
       const tmp = {
+        language: this.language,
         theme: this.theme,
         ordet: this.ordet,
       }
@@ -45,14 +55,19 @@ export const useStoresSettings = defineStore('stores-settings', {
     fromLocalStorage() {
       const settings = getLocalStorage('settings');
       if (settings) {
-        if (settings.theme)
+        if (settings.language) {
+          this.language = settings.language
+        }
+        if (settings.theme) {
           this.theme.dark = settings.theme.dark;
           this.theme.iconColor = settings.theme.iconColor;
-        if (settings.ordet)
+        }
+        if (settings.ordet) {
           this.ordet = settings.ordet;
-        
-          if (settings.theme.dark)
+        }
+        if (settings.theme.dark) {
           document.documentElement.classList.add('dark');
+        }
       }
     }
   }

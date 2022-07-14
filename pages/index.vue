@@ -1,24 +1,16 @@
 <script setup>
 import { useStoresStrapi } from '@/stores/storesStrapi.ts';
+import { useStoresSettings } from '@/stores/storesSettings.ts';
+const settings = useStoresSettings();
 const strapi = useStoresStrapi();
 
 const { find } = useStrapi4();
-
-const language = ref('swedish');
-
-const changeLanguage = () => {
-  if (language.value === 'swedish') {
-    language.value = 'english';
-  } else {
-    language.value = 'swedish';
-  }
-}
 </script>
 
 <template>
 <div class="index-main">
   
-  <index-aside :language="language" @change-language="changeLanguage"></index-aside>
+  <index-aside />
 
   <article class="index-content">
     <div class="hero">
@@ -28,28 +20,28 @@ const changeLanguage = () => {
       
     </div>
     <div class="projects">
-      <div class="games">
-        <h2>Games</h2>
+      <div class="card-row">
+          <h2>CSS Showcases</h2>
           <div class="card-container" v-if="!strapi.isLoading">
-            <div v-if="language === 'swedish'">
-              <index-link-card v-for="article in strapi.cardsSv.games" :key="article.id" :article="article.attributes.card" />
+            <div v-if="settings.language === 'swedish'">
+              <index-link-card v-for="article in strapi.cardsSv.showcases" :key="article.id" :article="article.attributes.card" />
             </div>
-            <div v-else-if="language === 'english'">
-              <index-link-card v-for="article in strapi.cardsEn.games" :key="article.id" :article="article.attributes.card" />
+            <div v-else-if="settings.language === 'english'">
+              <index-link-card v-for="article in strapi.cardsEn.showcases" :key="article.id" :article="article.attributes.card" />
             </div>
           </div>
           <div class="card-container" v-else>
             <index-link-card />
           </div>
       </div>
-      <div class="showcases">
-          <h2>CSS Showcases</h2>
+      <div class="card-row">
+        <h2>Games</h2>
           <div class="card-container" v-if="!strapi.isLoading">
-            <div v-if="language === 'swedish'">
-              <index-link-card v-for="article in strapi.cardsSv.showcases" :key="article.id" :article="article.attributes.card" />
+            <div v-if="settings.language === 'swedish'">
+              <index-link-card v-for="article in strapi.cardsSv.games" :key="article.id" :article="article.attributes.card" />
             </div>
-            <div v-else-if="language === 'english'">
-              <index-link-card v-for="article in strapi.cardsEn.showcases" :key="article.id" :article="article.attributes.card" />
+            <div v-else-if="settings.language === 'english'">
+              <index-link-card v-for="article in strapi.cardsEn.games" :key="article.id" :article="article.attributes.card" />
             </div>
           </div>
           <div class="card-container" v-else>
@@ -110,7 +102,9 @@ const changeLanguage = () => {
   flex-flow: row wrap;
   gap: 20px;
 }
-
+.card-container {
+  padding: 10px;
+}
 
 .flex-pusher {
   width: 10px;
@@ -118,15 +112,23 @@ const changeLanguage = () => {
 }
 
 @media (max-width: 600px) {
-  .main {
-    flex-flow: column nowrap;
+  .index-main {
+    
   }
-  .content {
+  .index-content {
     margin-left: 0;
+    width: 100%;
   }
   .flex-pusher {
+    display: none;
     height: 0;
     width: 0;
+  }
+  .card-container > div {
+    flex-flow: row nowrap;
+  }
+  .card-container {
+    overflow-y: scroll;
   }
 }
 </style>
