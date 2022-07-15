@@ -99,11 +99,12 @@ const { find } = useStrapi4();
 
 .card-container > div {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   gap: 20px;
 }
 .card-container {
   padding: 10px;
+  overflow-y: scroll;
 }
 
 .flex-pusher {
@@ -123,12 +124,6 @@ const { find } = useStrapi4();
     display: none;
     height: 0;
     width: 0;
-  }
-  .card-container > div {
-    flex-flow: row nowrap;
-  }
-  .card-container {
-    overflow-y: scroll;
   }
 }
 </style>
