@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <div class="card">
-      <util-skeleton-loader />
+      <util-skeleton-loader-old />
     </div>
   </div>
 </template>

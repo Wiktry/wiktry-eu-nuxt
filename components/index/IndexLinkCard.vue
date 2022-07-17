@@ -9,98 +9,110 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="card-cont">
+  <div class="card">
     <Transition appear mode="out-in">
-      <div class="card" v-if="article !== undefined">
-        <img :src="article.imgurl" class="img" alt="error" />
+      <NuxtLink :to="article.path" class="button" v-if="article !== undefined">
+        <div class="img-cont">
+          <img :src="article.imgurl" class="img" alt="error" />
+        </div>
         <div class="container">
           <p class="title">{{ article.title }}</p>
           <div class="desc" v-html="article.desc"></div>
-          <NuxtLink :to="article.path" class="button">
-            Check it out!
-            <v-icon class="icon" :icon="mdiArrowRight" size="22" />
-          </NuxtLink>
         </div>
-      </div>
-      <div v-else>
-        <util-skeleton-loader />
-      </div>
+      </NuxtLink>
+      <util-skeleton-loader v-else />
     </Transition>
   </div>
 </template>
 
 <style scoped>
-.card-cont {
-  width: 320px;
-  height: 320px;
-
-  display: flex;
-  flex-flow: column nowrap;
-
-  background-color: var(--main-dark);
-  border-radius: 6px;
-  box-shadow: 0 0 4px 3px rgba(0, 0, 0, 0.2);
-}
 .card {
-  --font-color: rgba(255,255,255,0.6);
-
+  margin: 10px;
   width: 320px;
-  height: 320px;
+  height: 260px;
+  color: white;
+}
+.button {
+  display: grid;
+}
+.img-cont {
+  width: 320px;
+  height: 240px;
+  overflow: hidden;
 
-  display: flex;
-  flex-flow: column nowrap;
+  grid-column: 1;
+  grid-row: 1;
 
-  color: var(--font-color);
+  border-top-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 24px;
+  border-bottom-left-radius: 24px;
+
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.6);
 }
 .img {
-  width: 100%;
-  height: 140px;
+  width: 320px;
+  height: 240px;
   object-fit: cover;
 
-  border-top-right-radius: 6px;
-  border-top-left-radius: 6px;
+  grid-column: 1;
+  grid-row: 1;
+
+  transition: .3s ease;
 }
 .container {
-  padding: 14px;
-
-  height: 100%;
-  width: 100%;
+  padding: 10px;
+  width: 260px;
+  height: 120px;
+  position: relative;
 
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-between;
+
+  left: 10px;
+  top: 180px;
+  opacity: 0;
+
+  grid-column: 1;
+  grid-row: 1;
+
+  background-color: rgb(20, 20, 20);
+
+  border-top-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 24px;
+  border-bottom-left-radius: 24px;
+
+  transition: .3s ease;
 }
 .title {
   padding: 0;
   margin: 0;
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 600;
 }
-.button {
+.desc {
+  height: 100%;
   width: 100%;
-  height: 36px;
-  padding: 10px;
-  background-color: var(--main-middle-dark);
-
-  font-weight: 500;
-
-  align-self: flex-end;
-
   display: flex;
   align-items: center;
-  justify-content: space-between;
-
-  border-radius: 3px;
-
-  transition: background .2s ease;
 }
+
 .button:link, .button:visited {
   text-decoration: none;
-  color: var(--font-color);
+  color: white;
 }
-.button:hover {
-  background-color: var(--main-middle-dark-hover);
+.button:hover .img{
+  border-top-right-radius: 42px;
+  border-bottom-left-radius: 42px;
+  transform: scale(1.2);
 }
+.button:hover .container{
+  top: 160px;
+  opacity: 1;
+  box-shadow: 0 0 6px 4px rgba(0,0,0,0.2);
+}
+
 
 .v-enter-active,
 .v-leave-active {
@@ -110,5 +122,17 @@ const props = defineProps({
 .v-enter-from,
 .v-leave-to {
   opacity: 0;
+}
+
+@media (max-width: 600px) {
+  .container {
+    top: 160px;
+    opacity: 1;
+    box-shadow: 0 0 6px 4px rgba(0,0,0,0.2);
+  }
+  .img-cont {
+    border-top-right-radius: 42px;
+    border-bottom-left-radius: 42px;
+  }
 }
 </style>

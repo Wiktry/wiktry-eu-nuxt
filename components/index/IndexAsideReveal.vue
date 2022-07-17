@@ -29,13 +29,13 @@ const onClick = () => {
   position: fixed;
   bottom: 0;
   right: calc(var(--width) * 0.05);
-  z-index: 1;
+  z-index: 12;
 
   height: 50px;
   width: 60px;
 
   border-radius: 6px;
-  background-color: var(--main-middle-dark);
+  background-color: var(--main-light);
 
   transition: .3s;
 }

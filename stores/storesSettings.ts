@@ -6,7 +6,7 @@ export const useStoresSettings = defineStore('stores-settings', {
     return {
       language: 'english',
       theme: {
-        dark: false,
+        dark: true,
         iconColor: 'rgb(44, 62, 80)',
         inactiveIconColor: 'grey'
       },

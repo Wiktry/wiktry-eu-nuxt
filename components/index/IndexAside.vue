@@ -76,6 +76,9 @@ const openAside = ref(false);
       <button @click="changeUrl('https://github.com/Wiktry/wiktry-eu-nuxt')" class="footer-button">
         <v-icon :icon="mdiGithub" size="32" />
       </button>
+      <div class="footer-button">
+        <header-theme-selector />
+      </div>
       <button class="footer-button" @click="settings.changeLanguage">
         <div class="language-select">
           <Transition mode="out-in">
@@ -105,15 +108,17 @@ const openAside = ref(false);
 .personal-info {
   width: 300px;
   height: calc(var(--vh, 1vh) * 100);
+  position: fixed;
+  z-index: 1;
 
-  background-color: var(--main-dark);
+  background-color: var(--main-middle);
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.6);
 }
 .name-title {
   height: 200px;
   width: 100%;
   padding: 20px;
-  background-color: var(--main-middle-dark);
+  background-color: var(--main-light);
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.6);
 
   display: flex;
@@ -163,7 +168,7 @@ const openAside = ref(false);
   position: fixed;
   bottom: 0;
 
-  background-color: var(--main-middle-dark);
+  background-color: var(--main-light);
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.6);
 
   display: flex;
@@ -217,7 +222,6 @@ const openAside = ref(false);
   .personal-info {
     width: 100vw;
 
-    z-index: 1;
     position: fixed;
     left: -100vw;
 

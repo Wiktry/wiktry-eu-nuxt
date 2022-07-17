@@ -2,16 +2,6 @@
 :root {
   --mobile-width: 800px;
 
-  --main-dark: rgb(26, 55, 77);
-  --main-middle-dark: rgb(43, 76, 99);
-  --main-middle-dark-hover: rgb(64, 100, 126);
-  --main-middle-light: rgb(105, 152, 171);
-  --main-light: rgb(177, 208, 224);
-  --main-accent: rgb(77, 26, 55);
-  --main-accent-light: rgb(157, 21, 98);
-  --main-text: #fff;
-  --sub-title: hsl(206, 50%, 20%);
-
   --scrollbar-color: rgb(149, 149, 149);
   --scrollbar-track-color: rgb(23, 23, 23);
   
