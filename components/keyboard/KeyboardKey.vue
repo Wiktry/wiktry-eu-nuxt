@@ -68,7 +68,7 @@ const classObject = computed(() => ({
   flex: 1;
 
   font-size: 1.5em;
-  font-weight: bold;
+  font-weight: 400;
   text-transform: capitalize;
   color: var(--text-color);
 

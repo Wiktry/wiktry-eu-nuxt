@@ -19,6 +19,8 @@
   width: 100%;
   height: 100%;
 
+  background-color: #1e1f28;
+
   display: flex;
   justify-content: center;
   align-items: center;

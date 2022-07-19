@@ -39,7 +39,7 @@ export default defineNuxtConfig({
     link: [
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Open+Sans&display=swap'
+        href: 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap'
       },
     ]
   }

@@ -34,7 +34,7 @@ const classObject = computed(() => ({
   justify-content: center;
   align-items: center;
 
-  font-weight: bold;
+  font-weight: 400;
   font-size: 2em;
   line-height: 0;
   text-transform: capitalize;

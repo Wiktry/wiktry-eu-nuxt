@@ -46,6 +46,13 @@ const { isSwiping, distanceY } = usePointerSwipe(el, {
     }
   }
 });
+
+const unSwipe = () => {
+  if (opacity.value === 0) {
+    top.value = '0';
+    opacity.value = 1;
+  }
+}
 </script>
 
 <template>
@@ -53,8 +60,8 @@ const { isSwiping, distanceY } = usePointerSwipe(el, {
     <div v-if="width > 600" class="css-pusher" :class="{ 'css-pusher-active': y > 60 && width > 600 }"></div>
     <div class="css" :class="{ 'css-active': y > 60 && width > 600, 'css-swipe': !isSwiping }" :style="{ '--top': top, '--op': opacity }" ref="el">
       <slot name="css"></slot>
-      <util-scroll-window :active="y > 60 || width < 600" />
     </div>
+    <util-scroll-window :active="(y > 60 && width > 600) || width > 600" @scroll="unSwipe" />
     <article class="article" :class="{ 'article-active': y > 60 && width > 600 }">
       <slot name="article"></slot>
     </article>

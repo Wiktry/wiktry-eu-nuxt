@@ -1,8 +1,12 @@
 <script setup>
 import { useStoresStrapi } from '@/stores/storesStrapi.ts';
 import { useStoresSettings } from '@/stores/storesSettings.ts';
+import { useElementSize } from '@vueuse/core';
 const settings = useStoresSettings();
 const strapi = useStoresStrapi();
+
+const banner = ref(null);
+const { width, height } = useElementSize(banner);
 </script>
 
 <template>
@@ -10,8 +14,10 @@ const strapi = useStoresStrapi();
     <img class="index-back-img" src="~/assets/index/index_back.jpg" alt="background" />
     <div class="index-grad"></div>
     <div class="hero">
-      <div class="index-hero-back"></div>
-      <img class="index-hero-img" src="~/assets/index/index_hero_dark.jpg" alt="hero" />
+      <div class="hero-top"></div>
+      <img class="index-hero-img" src="~/assets/index/index_hero_dark.jpg" alt="hero" ref="banner" />
+      <index-hero :height="height" :width="width" />
+      <div class="hero-bottom"></div>
     </div>
     <div class="hero-grad"></div>
     <div class="experience">
@@ -77,18 +83,37 @@ const strapi = useStoresStrapi();
 }
 
 .hero {
-  margin: 20px auto 0;
-  padding: 40px 0;
-  width: 80%;
+  width: 100%;
   
+  display: grid;
+  justify-items: center;
+
   z-index: 2;
 
+  
+}
+.hero-top {
+  height: 40px;
+  width: 80%;
+  margin-top: 40px;
   background-color: var(--main-dark);
+
+  grid-column: 1;
+  grid-row: 1;
+}
+.hero-bottom {
+  margin-bottom: 40px;
+  background-color: var(--main-dark);
+
+  grid-column: 1;
+  grid-row: 3;
 }
 .index-hero-img {
-  margin: 0 0 0 -5%;
-  width: 110%;
+  width: 90%;
   object-fit: contain;
+
+  grid-column: 1;
+  grid-row: 2;
 
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.3);
 }
@@ -138,13 +163,16 @@ const strapi = useStoresStrapi();
     width: 100%;
   }
 
-  .hero {
-    padding: 20px 0;
+  .hero-top {
+    margin-top: 20px;
+    height: 20px;
+  }
+  .hero-bottom {
+    margin-bottom: 20px;
   }
   .index-hero-img {
-    margin-left: -12.5%;
     width: 100vw;
-    height: 300px;
+    height: 500px;
 
     object-fit: cover;
   }

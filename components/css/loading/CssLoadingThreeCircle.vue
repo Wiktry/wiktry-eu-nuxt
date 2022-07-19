@@ -30,12 +30,10 @@ defineProps({
   width: 50px;
 
   border-radius: 50%;
-  border: 3px solid var(--color);
-  border-right: 3px solid transparent;
-  border-top: 3px solid transparent;
-  border-left: 3px solid transparent;
+  border: 3px solid transparent;
+  border-bottom: 3px solid var(--color);
 
-  animation: rotate 1s ease infinite;
+  animation: rotate 1s linear infinite;
 }
 .circle_2 {
   position: absolute;
@@ -43,14 +41,10 @@ defineProps({
   width: 38px;
 
   border-radius: 50%;
-  border: 3px solid var(--color);
-  border-right: 3px solid transparent;
-  border-top: 3px solid transparent;
-  border-left: 3px solid transparent;
+  border: 3px solid transparent;
+  border-bottom: 3px solid var(--color);
 
-  opacity: .8;
-
-  animation: rotate 1s linear infinite reverse;
+  animation: rotate 1s linear .2s infinite reverse;
 }
 .circle_3 {
   position: absolute;
@@ -58,14 +52,10 @@ defineProps({
   width: 26px;
 
   border-radius: 50%;
-  border: 3px solid var(--color);
-  border-right: 3px solid transparent;
-  border-top: 3px solid transparent;
-  border-left: 3px solid transparent;
+  border: 3px solid transparent;
+  border-bottom: 3px solid var(--color);
 
-  opacity: .8;
-
-  animation: rotate 1s linear .4s infinite;
+  animation: rotate 1s linear .6s infinite;
 }
 
 @keyframes rotate {

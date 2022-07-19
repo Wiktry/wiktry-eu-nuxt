@@ -36,7 +36,12 @@ const openAside = ref(false);
       <img src="~/assets/index/portrait.png" height="100" width="100" class="img" />
       <span class="bold text-name">Wiktor Rydlund</span>
       <div>
-        <p class="sub-title">Software Developer <br /> Sleep Enthusiast</p>
+        <p class="sub-title" v-if="settings.language === 'english'">
+          Software Developer <br /> Design Enthusiast
+        </p>
+        <p class="sub-title" v-else>
+          Mjukvaruutvecklare <br /> Designentusiast
+        </p>
       </div>
     </div>
     <div class="experience-cont">
@@ -60,7 +65,6 @@ const openAside = ref(false);
           <index-aside-linear-progress :title="text.pLang.react.title" :value="text.pLang.react.value" />
           <index-aside-linear-progress :title="text.pLang.vue.title" :value="text.pLang.vue.value" />
           <index-aside-linear-progress :title="text.pLang.cpp.title" :value="text.pLang.cpp.value" />
-          <index-aside-linear-progress :title="text.pLang.python.title" :value="text.pLang.python.value" />
         </div>
         <v-divider />
         <div class="frameworks">

@@ -23,7 +23,6 @@ const onClick = () => {
 
 <template>
   <button class="scroll" :class="{ active: active }" @click="onClick" :style="{ '--deg': deg + 'deg' }">
-    <!--<v-icon class="icon" :class="{ active: active }" :icon="mdiArrowRight" :color="settings.theme.iconColor" size="28" />-->
     <svg height="60" width="40" :style="{ '--icon': settings.theme.iconColor }">
       <polyline points="10,20 20,30 30,20" style="fill:none;stroke-width:3" class="arrow arrow-1" />
       <polyline points="10,30 20,40 30,30" style="fill:none;stroke-width:3" class="arrow arrow-2" />

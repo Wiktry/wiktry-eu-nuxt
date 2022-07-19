@@ -34,7 +34,7 @@ defineProps({
   border-top: 3px solid transparent;
   border-left: 3px solid transparent;
 
-  animation: rotate 1s ease infinite;
+  animation: rotate 1s linear infinite;
 }
 .circle_2 {
   position: absolute;
@@ -49,7 +49,7 @@ defineProps({
 
   opacity: .8;
 
-  animation: rotate 1s linear infinite;
+  animation: rotate 1s linear infinite reverse;
 }
 
 @keyframes rotate {
