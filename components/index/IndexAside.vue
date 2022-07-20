@@ -33,7 +33,7 @@ const openAside = ref(false);
 <template>
   <aside class="personal-info" :class="{ 'aside-open': openAside }" :style="{ '--width': width + 'px', '--padding': (width - 240) / 2 + 'px' }">
     <div class="name-title">
-      <img src="~/assets/index/portrait.png" height="100" width="100" class="img" />
+      <img src="~/assets/index/portrait.webp" height="100" width="100" class="img" />
       <span class="bold text-name">Wiktor Rydlund</span>
       <div>
         <p class="sub-title" v-if="settings.language === 'english'">

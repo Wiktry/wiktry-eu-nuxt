@@ -15,7 +15,7 @@ const { width, height } = useElementSize(banner);
     <div class="index-grad"></div>
     <div class="hero">
       <div class="hero-top"></div>
-      <img class="index-hero-img" src="~/assets/index/index_hero_dark.jpg" alt="hero" ref="banner" />
+      <img class="index-hero-img" src="~/assets/index/index_hero_dark.webp" alt="hero" ref="banner" />
       <index-hero :height="height" :width="width" />
       <div class="hero-bottom"></div>
     </div>

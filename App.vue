@@ -41,10 +41,4 @@ onMounted(async () => {
 .v-leave-to {
   left: 200vw;
 }
-
-.page {
-  /*height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
-  height: calc(100vh - env(safe-area-inset-bottom));*/
-}
 </style>

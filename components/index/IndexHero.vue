@@ -34,7 +34,7 @@ defineProps({
       </p>
       <div :style="{ height: width > 600 || height < 400 ? '100px' : 0 }"></div>
     </div>
-    <img class="portrait-img" src="~/assets/index/big_me.png" alt="not me" :style="{ height: width > 600 || height < 400 ? height + 20 + 'px' : height * 0.6 + 'px' }" />
+    <img class="portrait-img" src="~/assets/index/big_me.webp" alt="not me" :style="{ height: width > 600 || height < 400 ? height + 20 + 'px' : height * 0.6 + 'px' }" />
   </div>
 </template>
 
