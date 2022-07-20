@@ -1,5 +1,9 @@
 <script setup>
-const strapi = await getStrapiPost(7, 'showcases');
+let strapi = ref(null);
+onMounted(async () => {
+  const wait = await getStrapiPost(7, 'showcases');
+  strapi.value = wait;
+})
 </script>
 
 <template>
