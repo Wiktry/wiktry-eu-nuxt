@@ -11,7 +11,7 @@ const { width, height } = useElementSize(banner);
 
 <template>
   <article class="index-content">
-    <img class="index-back-img" src="~/assets/index/index_back.jpg" alt="background" />
+    <img class="index-back-img" src="~/assets/index/index_back.webp" alt="background" />
     <div class="index-grad"></div>
     <div class="hero">
       <div class="hero-top"></div>
