@@ -24,7 +24,7 @@ defineProps({
           'Discover my amazing site!'
         }}
       </p>
-      <p :style="{ 'font-size': width > 600 || height < 400 ? width * 0.014 + 'px' : width * 0.04 + 'px' }">
+      <p :style="{ 'font-size': width > 600 || height < 400 ? width * 0.014 + 'px' : width * 0.038 + 'px' }">
         <span class="span-code">{{'code'}}</span>
         {{ settings.language === 'swedish' ?
           'Jag bygger saker med text.' :

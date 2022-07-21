@@ -1,12 +1,32 @@
 <script setup>
-import { useStoresMenu } from '@/stores/storesMenu.ts'; 
+import { useStoresMenu } from '@/stores/storesMenu.ts';
+import { useStoresStrapi } from '@/stores/storesStrapi.ts';
+import { useStoresSettings } from '@/stores/storesSettings.ts';
+const settings = useStoresSettings();
 const menu = useStoresMenu();
+const strapi = useStoresStrapi();
 </script>
 
 <template>
-<aside class="menu" :class="{ show: menu.show }">
+  <aside class="menu" :class="{ show: menu.show }">
+    <div class="link-cont" v-if="settings.language === 'english'">
+      <h2 class="title">Games</h2>
+      <util-aside-menu-link v-for="card in strapi.cardsSv.games" :key="card.id" :card="card.attributes.card" @travel="menu.closeMenu" />
+    </div>
+    <div class="link-cont" v-else>
+      <h2 class="title">Spel</h2>
+      <util-aside-menu-link v-for="card in strapi.cardsEn.games" :key="card.id" :card="card.attributes.card" @travel="menu.closeMenu" />
+    </div>
 
-</aside>
+    <div class="link-cont" v-if="settings.language === 'english'">
+      <h2 class="title">CSS Showcases</h2>
+      <util-aside-menu-link v-for="card in strapi.cardsSv.showcases" :key="card.id" :card="card.attributes.card" @travel="menu.closeMenu" />
+    </div>
+    <div class="link-cont" v-else>
+      <h2 class="title">CSS Uppvisning</h2>
+      <util-aside-menu-link v-for="card in strapi.cardsEn.showcases" :key="card.id" :card="card.attributes.card" @travel="menu.closeMenu" />
+    </div>
+  </aside>
 </template>
 
 <style scoped>

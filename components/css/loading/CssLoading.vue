@@ -10,7 +10,7 @@
       <css-loading-slide />
       <css-loading-two-circle />
       <css-loading-three-circle />
-      <css-loading-double-circle />
+      <css-loading-tripple-square />
     </div>
   </div>
 </template>
