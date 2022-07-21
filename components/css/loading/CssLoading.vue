@@ -4,12 +4,13 @@
 
 <template>
   <div class="main">
-    <div class="container">
+    <div class="container-out">
       <css-loading-google />
       <css-loading-gradient-circle />
       <css-loading-slide />
       <css-loading-two-circle />
       <css-loading-three-circle />
+      <css-loading-double-circle />
     </div>
   </div>
 </template>
@@ -25,7 +26,7 @@
   justify-content: center;
   align-items: center;
 }
-.container {
+.container-out {
   background-color: var(--content-background-color);
   display: flex;
   flex-flow: row wrap;
