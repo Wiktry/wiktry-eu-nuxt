@@ -1,42 +1,7 @@
-# Nuxt 3 Minimal Starter
+# wiktry.eu
 
-Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
+My personal website, hosting the things I create for the web.
 
-## Setup
+## Technologies
 
-Make sure to install the dependencies:
-
-```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install --shamefully-hoist
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
+The website is built with [Vue 3](https://vuejs.org/), using the third release candidate of [Nuxt 3](https://v3.nuxtjs.org/). I'm also using [Vuetify](https://vuetifyjs.com/en/), exclusively for icons, and [Vueuse](https://vueuse.org/) for some of its fantastic composables, all hosted on [Vercel](https://vercel.com). I'm also using [Strapi](https://strapi.io/) for the back-end, hosted on [Heroku](https://heroku.com/).
