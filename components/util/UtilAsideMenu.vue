@@ -52,6 +52,10 @@ const strapi = useStoresStrapi();
   left: 0;
 }
 
+.title {
+  margin-left: 10px;
+}
+
 @media (max-width: 600px) {
   .show {
     width: 100vw;

@@ -111,7 +111,7 @@ const openAside = ref(false);
 
 .personal-info {
   width: 300px;
-  height: calc(var(--vh, 1vh) * 100);
+  height: 100%;
   position: fixed;
   z-index: 1;
 
@@ -169,7 +169,7 @@ const openAside = ref(false);
   width: 300px;
   height: 50px;
 
-  position: fixed;
+  position: absolute;
   bottom: 0;
 
   background-color: var(--main-light);
@@ -242,8 +242,11 @@ const openAside = ref(false);
     height: 50px;
     width: 100%;
   }
+  .footer-button {
+    width: calc(100% / 5);
+  }
   .aside-footer {
-    width: var(--width);
+    width: 100vw;
   }
 }
 </style>

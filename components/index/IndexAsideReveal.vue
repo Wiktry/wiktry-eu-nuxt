@@ -26,9 +26,9 @@ const onClick = () => {
 
 <style scoped>
 .scroll {
-  position: fixed;
+  position: absolute;
   bottom: 0;
-  right: calc(var(--width) * 0.05);
+  left: calc(100vw - var(--width / 2));
   z-index: 12;
 
   height: 50px;
@@ -45,7 +45,7 @@ const onClick = () => {
 }
 .scroll-active {
   padding-left: 20px;
-  right: calc(100vw - 40px);
+  left: calc(var(--width) - 14px);
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
 }
 .active {

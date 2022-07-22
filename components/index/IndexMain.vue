@@ -88,9 +88,7 @@ const { width, height } = useElementSize(banner);
   display: grid;
   justify-items: center;
 
-  z-index: 2;
-
-  
+  z-index: 2;  
 }
 .hero-top {
   height: 40px;
@@ -172,7 +170,7 @@ const { width, height } = useElementSize(banner);
   }
   .index-hero-img {
     width: 100vw;
-    height: 500px;
+    height: 450px;
 
     object-fit: cover;
   }
