@@ -99,12 +99,6 @@ onMounted(() => {
 
   transform-style: preserve-3d;
 }
-.number-row {
-  width: calc(100% / 9);
-
-  transition: .5s;
-  transform: translateZ(-10px) translateY(calc(-70px * var(--i) - 10px));
-}
 .divider {
   width: calc(100% / 9);
   text-align: center;

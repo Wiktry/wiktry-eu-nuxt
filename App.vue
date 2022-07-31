@@ -21,7 +21,6 @@ onMounted(async () => {
     document.documentElement.style.setProperty('--vh', `${vh}px`);
   });
 })
-
 </script>
 
 <template>

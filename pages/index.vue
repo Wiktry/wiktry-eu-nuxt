@@ -7,6 +7,7 @@ const settings = useStoresSettings();
 <div class="index-main">
   <index-aside />
   <index-main />
+  <util-footer />
 </div>
 </template>
 
@@ -29,7 +30,7 @@ const settings = useStoresSettings();
   width: 100%;
 
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
 
   font-family: 'Open Sans';
   font-weight: 400;

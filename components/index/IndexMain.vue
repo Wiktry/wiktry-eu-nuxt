@@ -61,6 +61,7 @@ const { width, height } = useElementSize(banner);
   margin-left: 300px;
   width: calc(100vw - 300px);
   background-color: black;
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.6);
   
   z-index: 0;
 

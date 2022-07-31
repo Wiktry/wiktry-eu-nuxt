@@ -4,6 +4,7 @@ import { getLocalStorage, putLocalStorage } from "~~/scripts/localStorage";
 export const useStoresSettings = defineStore('stores-settings', {
   state: () => {
     return {
+      loader: false,
       language: 'english',
       theme: {
         dark: true,
