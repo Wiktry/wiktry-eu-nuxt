@@ -30,9 +30,8 @@ const menu = useStoresMenu();
   height: 2px;
   background-color: var(--text-color);
 
-  transition-property: transform opacity;
-  transition-duration: 300ms;
-  transition-timing-function: ease;
+  transition: 300ms ease;
+  transition-property: transform, background-color;
 }
 
 .burger::before, .burger::after {

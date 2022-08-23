@@ -36,11 +36,24 @@ export default defineNuxtConfig({
   },
   ssr: false,
   meta: {
+    title: "Software Developer | Wiktor Rydlund",
     link: [
       {
+        rel: 'icon',
+        href: '/logo.svg',
+      },
+      {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap'
+        href: 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;800&display=swap'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap'
       },
     ]
   }
-})              
+})

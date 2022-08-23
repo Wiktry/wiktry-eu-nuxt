@@ -6,17 +6,27 @@
   --scrollbar-track-color: rgb(23, 23, 23);
   
   /* Text colors */
-  --text-color: rgb(44, 62, 80);
+  --text-color: rgb(27, 31, 34);
   --nw-text-color: #fff;
 
   /* Background color */
-  --background-color: rgb(244, 247, 248);
+  --background-color: rgb(255, 255, 255);
   --content-background-color: rgb(238, 242, 245);
-  --menu-background-color: rgb(255, 255, 255);
+  --menu-background-color: rgb(244, 247, 248);
+
+  /* Opposing colors */
+  --op-text-color: #ffffff;
+  --op-background-color: rgb(24, 25, 28);
+  --op-content-background-color: rgb(20, 20, 23);
+  --op-menu-background-color: rgb(30, 32, 35);
 
   /* Border color */
   --border-color: #282c34;
   --border-color-transparent: rgb(0,0,0,0.4);
+
+  /* Highlight color */
+  --highlight: #9e1663;
+  --faint-highlight: #c04e8f;
 
   /* Components */
 
@@ -45,6 +55,12 @@
   --background-color: rgb(24, 25, 28);
   --content-background-color: rgb(20, 20, 23);
   --menu-background-color: rgb(30, 32, 35);
+
+  /* Opposing colors */
+  --op-text-color: rgb(27, 31, 34);
+  --op-background-color: rgb(244, 247, 248);
+  --op-content-background-color: rgb(238, 242, 245);
+  --op-menu-background-color: rgb(255, 255, 255);
 
   /* Border color */
   --border-color: #fff;
