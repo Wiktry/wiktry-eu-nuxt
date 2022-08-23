@@ -28,7 +28,7 @@ defineProps({
   margin-left: 20px;
   width: calc(100% - 40px);
 
-  background-color: var(--content-background-color);
+  background-color: var(--op-menu-background-color);
   border-radius: 6px;
   border-top-right-radius: 12px;
   border-bottom-left-radius: 12px;
@@ -41,8 +41,10 @@ defineProps({
   color: var(--text-color);
 }
 .name {
+  color: var(--op-text-color);
   margin-left: 10px;
   width: 100%;
   font-size: 1.4rem;
+  font-weight: 500;
 }
 </style>

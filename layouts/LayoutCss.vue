@@ -14,19 +14,22 @@ const containerHeight = computed(() => el.value.offsetHeight)
 
 // This shouldn't be necessary. But without it, desktop chrome spazzes out
 // So here it is
-useEventListener(window, 'scroll', evt => {
-  if (width.value < 600) {
-    return;
-  }
+onMounted(() => {
+  useEventListener(window, 'scroll', evt => {
+    if (width.value < 600) {
+      return;
+    }
 
-  const y = evt.target.documentElement.scrollTop;
-  if (y < 60 && oldY.value >= 60) {
-    window.scrollTo(0,0);
-    oldY.value = 0;
-  } else if (oldY.value < y) {
-    oldY.value = y;
-  }
+    const y = evt.target.documentElement.scrollTop;
+    if (y < 60 && oldY.value >= 60) {
+      window.scrollTo(0,0);
+      oldY.value = 0;
+    } else if (oldY.value < y) {
+      oldY.value = y;
+    }
+  })
 })
+
 
 const { isSwiping, distanceY } = usePointerSwipe(el, {
   onSwipe(e) {
@@ -51,6 +54,9 @@ const unSwipe = () => {
   if (opacity.value === 0) {
     top.value = '0';
     opacity.value = 1;
+  } else {
+    top.value = '-100%';
+    opacity.value = 0;
   }
 }
 </script>
