@@ -37,7 +37,7 @@ defineProps({
 .square_2 {
   position: absolute;
   height: var(--size);
-  width: var(--size);
+  width: 28px;
 
   background-color: var(--color);
   opacity: .2;

@@ -1,5 +1,10 @@
 {
   "swedish": {
+    "about": [
+      "Hejsan! Jag heter Wiktor, och är en mjukvaruutvecklare med en förkärlek för webbutveckling.", 
+      "Programering är något som länge har fascinerat mig. Genom min ungdom skrev jag ofta mina egna små bitar kod och webbsidor. Ett specielt minnesvärt projekt var när jag gjorde en presentation i historia med hjälp av en flash baserad webbsida, då det vid den tiden såg bättre ut än en powerpoint presentation. Där fanns inte mycket kod i det projektet, men det var en bra startpunkt för mer programmering på gymnasiet.",
+      "Sedan dess har jag programmerat mig igenom två år av gymnasiet och three år på universitet, samt oräkneliga personliga projekt som aldrig blev riktigt klara. Andra saker jag har lärt mig längs med vägen inkluderar Excel, Photoshop (jag hade två design relaterade kurser på gymnasiet), och hur man hittar de mest gäckande resultaten på Google."
+    ],
     "extra" : {
       "country": {
         "title": "Land",
@@ -18,7 +23,13 @@
         "response": "23"
       }
     },
+    "pLang": {
+      "title": "Programspråk",
+      "text": ["Min utbildning hade ett akademiskt fokus på etablerade språk som C++, C, och Assembler. På egentid har jag sedan fokuserat mer på webbkod med Javascript, men jag håller också min utbildning vid liv via Rust."]
+    },
     "lang": {
+      "title": "Språk",
+      "text": ["Jag är flytande i både svenska och engelska, och kan skriva och konversera i båda språken.", "Att jag har svårt för att uttrycka mig kortfattad är ett helt annat problem."],
       "swedish": {
         "title": "Svenska",
         "value": 100
@@ -27,9 +38,23 @@
         "title": "Engelska",
         "value": 90
       }
-    }
+    },
+    "frameworks": {
+      "title": "Ramverk",
+      "text": ["Jag har jobbet med flera olika ramverk inom webben, och är kompetent med både Vue med Nuxt och React med Next. Jag har också erfarenhet med npm, Git, och Vite. Erfarenhet som lätt kan överföras till nya ramverk och verktyg."],
+      "vue": {
+        "title": "Vue",
+        "text": ""
+      }
+    },
+    "links": "Jag söker för närvarande en position som frontendutvecklare."
   },
   "english": {
+    "about": [
+      "Hello! I'm Wiktor, a software developer with a penchant for web development.", 
+      "Programming is something that has long fascinated me: growing up I would often make my own small bits of code and the occasional website. An especially memorable occasion was when i made a presentation as a website built with flash (rip), as that—at the time—looked better than a powerpoint. There wasn't much code in that project, mostly clicking and dragging finished objects, but it set me up nicely for a descent into programming by the time I started high-school.",
+      "I've since had programming in two years of high-school, three years of university, and a slew of personal project that usually end before they are finished. Other things I've learned along the way includes Excel, Photoshop (I had two design courses in high-school), and how to find that one elusive result on Google."
+    ],
     "extra" : {
       "country": {
         "title": "Country",
@@ -48,7 +73,13 @@
         "response": "23"
       }
     },
+    "pLang": {
+      "title": "Programming",
+      "text": ["I've coded in many different languages, both at University and by myself. My education focused mostly on C++, but we also worked with Assembler, C, C#, Java, and Javascript. Now I focus on web based programming and Rust."]
+    },
     "lang": {
+      "title": "Languages",
+      "text": ["I am fluent in both English and Swedish, and can write and converse in both languages.", "That I can't express myself succinctly is another problem enirely."],
       "swedish": {
         "title": "Swedish",
         "value": 100
@@ -57,7 +88,16 @@
         "title": "English",
         "value": 90
       }
-    }
+    },
+    "frameworks": {
+      "title": "Frameworks",
+      "text": ["I've worked with a few differnet frameworks, and I'm competent with both Vue with Nuxt, and React with Next. I also have experience working with npm, Git, and Vite. Experience that is easily transferable to new frameworks and tools."],
+      "vue": {
+        "title": "Vue",
+        "text": ""
+      }
+    },
+    "links": "I'm currently looking for a position as a frontend developer."
   },
   "any": {
     "pLang": {
@@ -81,12 +121,16 @@
         "title": "Vue",
         "value": 70
       },
+      "rust": {
+        "title": "Rust",
+        "value": 40
+      },
       "cpp": {
         "title": "C++",
         "value": 50
       },
       "python": {
-        "title": "python",
+        "title": "Python",
         "value": 40
       }
     }

@@ -54,6 +54,14 @@ export default defineNuxtConfig({
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap'
       },
+      { // bebas-neue
+        rel: 'stylesheet',
+        href: 'https://use.typekit.net/qgb4yny.css' 
+      },
+      { // 'Plus Jakarta Sans' : 400 reg, 700 bold
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap' 
+      },
     ]
   }
 })
